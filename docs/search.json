@@ -1,0 +1,205 @@
+[
+  {
+    "objectID": "Lecture01_Operacionalizacion.html",
+    "href": "Lecture01_Operacionalizacion.html",
+    "title": "Operacionalización de Variables",
+    "section": "",
+    "text": "1. Caso clínico\n2. ¿Qué es operacionalizar?\n\n3. Tipos de variables\n4. Precisión, exactitud y validez\n\n\n\nObjetivos: definir y aplicar operacionalización · clasificar variables por escala de medición · distinguir precisión, exactitud y validez"
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#agenda",
+    "href": "Lecture01_Operacionalizacion.html#agenda",
+    "title": "Operacionalización de Variables",
+    "section": "Agenda",
+    "text": "Agenda\n\n\n1. Caso clínico\n2. ¿Qué es operacionalizar?\n\n3. Tipos de variables\n4. Precisión, exactitud y validez\n\n\nObjetivos: definir y aplicar operacionalización · clasificar variables por escala de medición · distinguir precisión, exactitud y validez"
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#cómo-mides-obesidad",
+    "href": "Lecture01_Operacionalizacion.html#cómo-mides-obesidad",
+    "title": "Operacionalización de Variables",
+    "section": "¿Cómo mides obesidad?",
+    "text": "¿Cómo mides obesidad?\n\nCaso clínico: Quieres estudiar si la obesidad es un factor de riesgo para diabetes mellitus tipo 2 (DM2) en adultos jóvenes de Lima. ¿Qué variable mides?\n\n\n\n\nÍndice de masa corporal (IMC)\nPerímetro abdominal\n\n\n\nPorcentaje de grasa corporal\nPresencia de acantosis nigricans"
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#el-problema",
+    "href": "Lecture01_Operacionalizacion.html#el-problema",
+    "title": "Operacionalización de Variables",
+    "section": "El problema",
+    "text": "El problema\nLas cuatro medidas aplicadas al mismo paciente dan resultados distintos.\n\n\n\nMedida\nValor\nClasificación\n\n\n\n\nIMC\n28.4 kg/m²\nSobrepeso\n\n\nPerímetro abdominal\n94 cm\nRiesgo aumentado\n\n\n% grasa corporal\n34%\nObesidad\n\n\nAcantosis\nPresente\nResistencia a la insulina\n\n\n\n¿Cuál es la «correcta»?"
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#la-respuesta",
+    "href": "Lecture01_Operacionalizacion.html#la-respuesta",
+    "title": "Operacionalización de Variables",
+    "section": "La respuesta",
+    "text": "La respuesta\n\nDefinir de forma explícita y reproducible cómo se medirá un concepto abstracto en el contexto de un estudio específico. No hay una medida «correcta» universal: la elección depende de la pregunta de investigación.\n\nEl proceso de elegir y especificar estas medidas se llama operacionalización."
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#qué-es-una-variable",
+    "href": "Lecture01_Operacionalizacion.html#qué-es-una-variable",
+    "title": "Operacionalización de Variables",
+    "section": "¿Qué es una variable?",
+    "text": "¿Qué es una variable?\n\nAtributo observable que varía entre individuos y que puede ser medido o clasificado.\n\nEjemplos clínicos:\n\nEdad, sexo, nivel de hemoglobina\nDiagnóstico de hipertensión (sí/no)\nGrado de dolor (ninguno / leve / moderado / severo)\nNúmero de gestaciones previas"
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#qué-es-operacionalizar",
+    "href": "Lecture01_Operacionalizacion.html#qué-es-operacionalizar",
+    "title": "Operacionalización de Variables",
+    "section": "¿Qué es operacionalizar?",
+    "text": "¿Qué es operacionalizar?\n\nEspecificación exacta de cómo se medirá un concepto abstracto: instrumento, unidad, punto de corte, protocolo.\n\nUna buena definición operacional responde:\n\n¿Qué instrumento se usa?\n¿Cómo se aplica (posición, condiciones, repeticiones)?\n¿Qué se registra y en qué unidad?"
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#la-brecha-fenómeno-medición",
+    "href": "Lecture01_Operacionalizacion.html#la-brecha-fenómeno-medición",
+    "title": "Operacionalización de Variables",
+    "section": "La brecha fenómeno → medición",
+    "text": "La brecha fenómeno → medición\n\n  \n    \n      Fenómeno de interésobesidad\n    \n    Concepto abstracto\n  \n  \n    →\n    operacionalización\n  \n  \n    \n      Medición en el estudioIMC, cm, %\n    \n    Valor observable\n  \n\n\nAdaptado de Browner et al. (2022), Fig. 4.1"
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#dos-grandes-familias",
+    "href": "Lecture01_Operacionalizacion.html#dos-grandes-familias",
+    "title": "Operacionalización de Variables",
+    "section": "Dos grandes familias",
+    "text": "Dos grandes familias\n\n\nCategóricas\n\nDicotómica (2 categorías)\nNominal (sin orden)\nOrdinal (con orden)\n\n\nNuméricas\n\nContinua (infinitos valores)\nDiscreta / conteo (enteros)"
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#variables-categóricas",
+    "href": "Lecture01_Operacionalizacion.html#variables-categóricas",
+    "title": "Operacionalización de Variables",
+    "section": "Variables categóricas",
+    "text": "Variables categóricas\n\n\nDicotómica\nDos categorías\nVivo / muerto Embarazada / no\n\nNominal\nCategorías sin orden\nTipo de sangre Identidad de género\n\nOrdinal\nCategorías con orden; intervalos no cuantificables\nDolor: ninguno / leve / moderado / severo\n\n\nPoder estadístico: nominal/dicotómica &lt; ordinal &lt; discreta &lt; continua"
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#variables-numéricas",
+    "href": "Lecture01_Operacionalizacion.html#variables-numéricas",
+    "title": "Operacionalización de Variables",
+    "section": "Variables numéricas",
+    "text": "Variables numéricas\n\n\nContinua\nInfinitos valores posibles en una escala\n\nHemoglobina (g/dL)\nPresión arterial (mmHg)\nIMC (kg/m²)\n\n\nDiscreta (conteo)\nNúmero finito de valores, típicamente enteros\n\nN.º de gestaciones\nN.º de hospitalizaciones\nN.º de medicamentos\n\n\n\nUna variable discreta con ≥6 valores posibles se comporta como continua en análisis."
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#regla-de-oro-prefiere-variables-continuas",
+    "href": "Lecture01_Operacionalizacion.html#regla-de-oro-prefiere-variables-continuas",
+    "title": "Operacionalización de Variables",
+    "section": "Regla de oro: prefiere variables continuas",
+    "text": "Regla de oro: prefiere variables continuas\nJerarquía de poder estadístico (Browner, Tabla 4.1):\n\n  Continua\n  ›\n  Discreta\n  ›\n  Ordinal\n  ›\n  Nominal / Dicotómica\n  → más poder\n\n\nNo conviertas IMC en «obeso / no obeso» si puedes quedarte con el número. Más información = mayor poder = menor tamaño de muestra."
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#por-qué-dos-médicos-obtienen-valores-distintos",
+    "href": "Lecture01_Operacionalizacion.html#por-qué-dos-médicos-obtienen-valores-distintos",
+    "title": "Operacionalización de Variables",
+    "section": "¿Por qué dos médicos obtienen valores distintos?",
+    "text": "¿Por qué dos médicos obtienen valores distintos?\n\nCaso: Dos residentes toman la presión arterial al mismo paciente con el mismo tensiómetro, tres veces cada uno. Los valores difieren. ¿Por qué?\n\nFuentes de error aleatorio:\n\nObservador: velocidad de deflación del manguito, técnica\nInstrumento: manómetro descalibrado, temperatura\nParticipante: variación fisiológica, esfuerzo, ansiedad"
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#precisión",
+    "href": "Lecture01_Operacionalizacion.html#precisión",
+    "title": "Operacionalización de Variables",
+    "section": "Precisión",
+    "text": "Precisión\n\nGrado en que una variable produce el mismo valor cuando se mide repetidamente. Sinónimos: reproducibilidad, confiabilidad, consistencia.\nMayor precisión = menor error aleatorio = mayor poder estadístico.\n\n¿Cómo se evalúa?\n\nVariables continuas: desviación estándar intra-sujeto, coeficiente de variación\nVariables categóricas: porcentaje de acuerdo, Kappa de Cohen (Cohen 1960), coeficiente de correlación intraclase (Shrout y Fleiss 1979)"
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#exactitud",
+    "href": "Lecture01_Operacionalizacion.html#exactitud",
+    "title": "Operacionalización de Variables",
+    "section": "Exactitud",
+    "text": "Exactitud\n\nGrado en que una variable se aproxima al valor verdadero. Depende de minimizar el sesgo (error sistemático), además de maximizar la precisión.\n\nFuentes de sesgo:\n\nObservador: tendencia inconsciente a redondear valores\nInstrumento: balanza no calibrada → pesos consistentemente bajos\nParticipante: sesgo de recuerdo, deseabilidad social\n\n¿Cómo se evalúa? Comparación con un estándar de oro (gold standard)."
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#precisión-vs.-exactitud-las-4-dianas",
+    "href": "Lecture01_Operacionalizacion.html#precisión-vs.-exactitud-las-4-dianas",
+    "title": "Operacionalización de Variables",
+    "section": "Precisión vs. exactitud: las 4 dianas",
+    "text": "Precisión vs. exactitud: las 4 dianas\n\n  \n    \n      \n      \n      \n      \n      \n      \n      \n      \n    \n    Alta precisión, alta exactitud\n  \n  \n    \n      \n      \n      \n      \n      \n      \n      \n      \n    \n    Alta precisión, baja exactitud (sesgo)\n  \n  \n    \n      \n      \n      \n      \n      \n      \n      \n      \n    \n    Baja precisión, alta exactitud\n  \n  \n    \n      \n      \n      \n      \n      \n      \n      \n      \n    \n    Baja precisión, baja exactitud\n  \n\nAdaptado de Browner et al. (2022), Figura 4.2"
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#confiabilidad-en-la-práctica",
+    "href": "Lecture01_Operacionalizacion.html#confiabilidad-en-la-práctica",
+    "title": "Operacionalización de Variables",
+    "section": "Confiabilidad en la práctica",
+    "text": "Confiabilidad en la práctica\n\n¿Dos médicos, mismo diagnóstico? Dos internistas examinan de forma independiente a 50 pacientes y clasifican cada caso como «anemia» o «no anemia». ¿Con qué frecuencia coinciden?\n\n\n\nConfiabilidad inter-observador\nMedida con el Kappa de Cohen (κ):\n\n\n\nκ\nInterpretación\n\n\n\n\n&lt; 0.4\nPobre\n\n\n0.4–0.6\nModerada\n\n\n0.6–0.8\nBuena\n\n\n&gt; 0.8\nExcelente\n\n\n\n\n\nKappa corrige el acuerdo por azar. Ej.: 80% observado, 60% por azar → κ = 0.50 (moderada). El «% de acuerdo» es engañoso si una categoría domina."
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#validez",
+    "href": "Lecture01_Operacionalizacion.html#validez",
+    "title": "Operacionalización de Variables",
+    "section": "Validez",
+    "text": "Validez\n\nDimensión cualitativa de la exactitud: qué tan bien una medición representa el fenómeno que pretende medir.\n\nEjemplo (Browner):\n\n\nCreatinina sérica\nPrecisa y exacta\nPero: influida por la masa muscular. Un paciente con poca masa muscular puede tener IRC con creatinina sérica normal.\n\nCistatina C\nPrecisa y exacta\nMás válida como medida de función renal: no depende de masa muscular."
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#tipos-de-validez",
+    "href": "Lecture01_Operacionalizacion.html#tipos-de-validez",
+    "title": "Operacionalización de Variables",
+    "section": "Tipos de validez",
+    "text": "Tipos de validez\n\n\n\n\n\n\n\n\n\nTipo\nPregunta que responde\nAncla\n\n\n\n\nDe contenido\n¿La medida cubre todos los aspectos del fenómeno? (SF-36 para calidad de vida)\n¿Cubre todo?\n\n\nDe apariencia (cara)\n¿La medida parece razonable a simple vista? (fragilidad = debilidad + fatiga + pérdida de peso)\n¿Parece correcto?\n\n\nDe constructo\n¿La medida se comporta como predice la teoría? (aislamiento social separa a quienes tienen pocas amistades)\n¿Predice la teoría?\n\n\nDe criterio\n¿La medida correlaciona con otra establecida? (nueva prueba de masa muscular vs. fuerza de prensión)\n¿Coincide con otro?"
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#el-estándar-de-oro-gold-standard",
+    "href": "Lecture01_Operacionalizacion.html#el-estándar-de-oro-gold-standard",
+    "title": "Operacionalización de Variables",
+    "section": "El estándar de oro (gold standard)",
+    "text": "El estándar de oro (gold standard)\n\nMedición de referencia que se cree que representa mejor el valor verdadero de la característica.\n\n\n\nCuando existe:\nPermite calcular exactitud cuantitativamente.\nEj.: biopsia para histología de cáncer\n\nCuando no existe:\nVariables subjetivas (dolor, calidad de vida).\nUsar tipos de validez de la diapositiva anterior.\n\n\nElegir el gold standard puede ser difícil; requiere consenso de expertos y revisión de la literatura."
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#el-mapa-completo",
+    "href": "Lecture01_Operacionalizacion.html#el-mapa-completo",
+    "title": "Operacionalización de Variables",
+    "section": "El mapa completo",
+    "text": "El mapa completo\n\n  Pregunta deinvestigación\n  →\n  Diseño demedicionesPrecisión · Exactitud · Validez\n  →\n  Datosdel estudio\n  →\n  Inferenciasobre el fenómeno\n\n\nLa validez de las conclusiones depende de qué tan bien el diseño de mediciones representa los fenómenos de interés."
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#cómo-medirías-obesidad-ahora",
+    "href": "Lecture01_Operacionalizacion.html#cómo-medirías-obesidad-ahora",
+    "title": "Operacionalización de Variables",
+    "section": "¿Cómo medirías obesidad ahora?",
+    "text": "¿Cómo medirías obesidad ahora?\n\nCaso: ¿La obesidad es un factor de riesgo para DM2 en adultos jóvenes de Lima?\n\n\n\n\n\n\n\n\n\nMedida\nDecisión\n\n\n\n\nIMC (kg/m²)\nContinua, alta precisión. Útil si el mecanismo es acumulación de grasa total.\n\n\nPerímetro abdominal\nContinua, captura grasa visceral. Más válida para riesgo metabólico.\n\n\n% grasa corporal\nContinua, requiere equipo especial (DEXA).\n\n\nAcantosis nigricans\nDicotómica (presente/ausente). Señal clínica de resistencia a la insulina; no cuantifica grasa directamente.\n\n\nDicotómica (obeso/no)\nPierde información. Evitar si es posible."
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#mensajes-clave-1",
+    "href": "Lecture01_Operacionalizacion.html#mensajes-clave-1",
+    "title": "Operacionalización de Variables",
+    "section": "Mensajes clave",
+    "text": "Mensajes clave\n\n\n\nOperacionalizar es definir exactamente cómo medir un concepto abstracto. La definición operacional debe ser explícita y reproducible.\nLas variables continuas tienen mayor poder estadístico: no las dicotomices innecesariamente.\nPrecisión = sin error aleatorio (reproducibilidad). Exactitud = cerca del valor verdadero (sin sesgo).\nValidez es qué tan bien la medición representa el fenómeno. Busca instrumentos ya validados.\nToda medición tiene limitaciones. El objetivo es minimizarlas, no eliminarlas."
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#referencias",
+    "href": "Lecture01_Operacionalizacion.html#referencias",
+    "title": "Operacionalización de Variables",
+    "section": "Referencias",
+    "text": "Referencias\n\n\nBland, J M, y D G Altman. 1986. «Statistical methods for assessing agreement between two methods of clinical measurement». Lancet 1 (8476): 307-10. https://pubmed.ncbi.nlm.nih.gov/2868172/.\n\n\nBrowner, Warren S, Thomas B Newman, Steven R Cummings, Deborah G Grady, Alison J Huang, Alka M Kanaya, y Mark J Pletcher. 2022. Designing clinical research. 5.ª ed. Baltimore, MD: Wolters Kluwer Health. https://www.wolterskluwer.com/en/solutions/ovid/designing-clinical-research-3464.\n\n\nCohen, Jacob. 1960. «A coefficient of agreement for nominal scales». Educ. Psychol. Meas. 20 (1): 37-46. https://doi.org/10.1177/001316446002000104.\n\n\nShrout, Patrick E, y Joseph L Fleiss. 1979. «Intraclass correlations: uses in assessing rater reliability». Psychol. Bull. 86 (2): 420-28. https://doi.org/10.1037/0033-2909.86.2.420.\n\n\nStreiner, David L, Geoffrey R Norman, y John Cairney. 2024. Health Measurement Scales. 6.ª ed. London, England: Oxford University Press. https://doi.org/10.1093/med/9780192869487.001.0001."
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#ejemplo-de-definición-operacional",
+    "href": "Lecture01_Operacionalizacion.html#ejemplo-de-definición-operacional",
+    "title": "Operacionalización de Variables",
+    "section": "Ejemplo de definición operacional",
+    "text": "Ejemplo de definición operacional\nFuerza de prensión con dinamómetro (Browner et al., 2022, Apéndice 4A):\n\n«Coloque el dinamómetro en la mano derecha con el dial hacia la palma. El brazo debe estar flexionado a 90° con el antebrazo paralelo al suelo. Apriete tan fuerte como pueda mientras cuento hasta tres. Registre en kilogramos, al 0.5 kg más cercano. Repita el procedimiento para el brazo izquierdo.»\n\n\n¿Por qué es una buena definición? Instrumento específico (dinamómetro) · posición exacta (90°, antebrazo paralelo) · unidad clara (kg, al 0.5) · protocolo verbal estandarizado y reproducible."
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#dónde-encaja-esta-clase",
+    "href": "Lecture01_Operacionalizacion.html#dónde-encaja-esta-clase",
+    "title": "Operacionalización de Variables",
+    "section": "¿Dónde encaja esta clase?",
+    "text": "¿Dónde encaja esta clase?\n\n  Pregunta deinvestigación\n  →\n  Diseño demediciones\n  →\n  Datosdel estudio\n  →\n  Inferenciasobre el fenómeno\n\nPrecisión · Exactitud · Validez · Escala de medición\nHoy construiremos el bloque resaltado: cómo convertir conceptos abstractos en variables medibles y confiables."
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#exactitud-vs.-validez-cuál-es-la-diferencia",
+    "href": "Lecture01_Operacionalizacion.html#exactitud-vs.-validez-cuál-es-la-diferencia",
+    "title": "Operacionalización de Variables",
+    "section": "Exactitud vs. validez: ¿cuál es la diferencia?",
+    "text": "Exactitud vs. validez: ¿cuál es la diferencia?\n\n\n\n\n\n\n\n\n\n\nExactitud\nValidez\n\n\n\n\nPregunta\n¿Cuánto me alejo del valor verdadero?\n¿Estoy midiendo el fenómeno correcto?\n\n\nTipo de error\nSesgo sistemático\nError de constructo\n\n\nSe evalúa con\nEstándar de oro cuantitativo\nTipos de validez (contenido, constructo…)\n\n\nEjemplo\nBalanza descalibrada (pesos sistemáticamente bajos)\nCreatinina como indicador de función renal\n\n\n\n\n\nExactitud → «¿bien medido?» · Validez → «¿bien elegido?»"
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#mensajes-clave-12",
+    "href": "Lecture01_Operacionalizacion.html#mensajes-clave-12",
+    "title": "Operacionalización de Variables",
+    "section": "Mensajes clave (1/2)",
+    "text": "Mensajes clave (1/2)\n\n\nOperacionalizar es definir exactamente cómo medir un concepto abstracto. La definición operacional debe ser explícita, reproducible y adecuada a la pregunta de investigación.\nLas variables continuas tienen mayor poder estadístico que las categóricas: no las dicotomices innecesariamente.\nPrecisión = sin error aleatorio (reproducibilidad). Exactitud = cerca del valor verdadero (sin sesgo)."
+  },
+  {
+    "objectID": "Lecture01_Operacionalizacion.html#mensajes-clave-22",
+    "href": "Lecture01_Operacionalizacion.html#mensajes-clave-22",
+    "title": "Operacionalización de Variables",
+    "section": "Mensajes clave (2/2)",
+    "text": "Mensajes clave (2/2)\n\n\nValidez es qué tan bien la medición representa el fenómeno: busca instrumentos ya validados antes de crear uno nuevo.\nToda medición tiene limitaciones. El objetivo es minimizarlas, no eliminarlas."
+  }
+]
