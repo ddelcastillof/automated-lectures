@@ -8,14 +8,24 @@
 //   2. Update variable names if desired (but keep the semantic mapping)
 //   3. The rest of the theme adapts automatically
 
-$primary-blue: #012169;        // Primary institutional color (headings, accents)
-$primary-gold: #B9975B;        // Secondary color (emphasis, borders)
-$highlight-yellow: #F2A900;    // Highlight color (markers, alerts)
-$light-bg: #E8EDF5;           // Light background for title/section slides
+// ──────────────────────────────────────────────────────────
+// ADIECS / ABC of Research — full color palette
+// ──────────────────────────────────────────────────────────
+$accent: #1A7A8A;              // Soft teal — primary accent
+$bglight: #ECF0F1;             // Light surface
+$offwhite: #FAFAFA;            // Slide background
+$textdark: #2D2D2D;            // Body text
+$casebg: #FEF9EE;              // Clinical case box background
+$amber: #D4A017;               // Amber — case box border
+
+// Semantic aliases used throughout the rest of the rules
+$primary-blue: #2C3E50;        // Slate blue-gray — headings, tables, markers
+$primary-gold: $amber;         // Amber — h3, secondary borders
+$highlight-yellow: #F2A900;    // Alert / highlight
+$light-bg: $bglight;           // Section-slide background
 
 // Semantic color mapping (don't change these names)
 $jet: #1a1a1a;
-$accent: $primary-blue;
 $accent2: $primary-gold;
 $right-arrow: "\2192";
 
@@ -40,6 +50,44 @@ $selection-bg: $primary-gold !default;
 
 
 /*-- scss:rules --*/
+
+// ==============================================================================
+// CUSTOM ENVIRONMENTS (equivalent to Beamer tcolorbox environments)
+// ==============================================================================
+
+.definicion {
+  border-left: 4px solid $accent;
+  background: $bglight;
+  padding: 0.5em 0.8em;
+  margin: 0.5em 0;
+  font-size: 0.9em;
+}
+
+.caso {
+  border: 1px solid $amber;
+  border-left: 4px solid $amber;
+  background: $casebg;
+  padding: 0.5em 0.8em;
+  margin: 0.5em 0;
+  font-size: 0.9em;
+}
+
+.clave {
+  background: $accent;
+  color: white;
+  padding: 0.6em 1em;
+  margin: 0.5em 0;
+  border-radius: 3px;
+  font-size: 0.88em;
+
+  strong { color: white; }
+}
+
+.nota {
+  color: #555555;
+  font-size: 0.78em;
+  padding: 0.3em 0.5em;
+}
 
 // ==============================================================================
 // SLIDE LAYOUT

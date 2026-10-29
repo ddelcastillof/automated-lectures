@@ -1,0 +1,865 @@
+\documentclass[aspectratio=169, 12pt, xcolor=table]{beamer}
+\input{../Preambles/header}
+
+% ============================================================
+% Metadata
+% ============================================================
+\title{Operacionalización de Variables}
+\subtitle{Cómo convertir conceptos en datos medibles}
+\author{}
+\institute{%
+  ABC of Research\\
+  Darwin del Castillo Fernández
+}
+\date{11/04/2026}
+
+% ============================================================
+\begin{document}
+% ============================================================
+
+\maketitle
+
+% ============================================================
+% SECCIÓN 0: Portada + Agenda
+% ============================================================
+
+% Slide 2: Agenda
+\begin{frame}{Agenda}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{\textcolor{accent}{1.}} Caso clínico\\[4pt]
+      \textbf{\textcolor{accent}{2.}} ¿Qué es operacionalizar?
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{\textcolor{accent}{3.}} Tipos de variables\\[4pt]
+      \textbf{\textcolor{accent}{4.}} Precisión, exactitud y validez
+    \end{column}
+  \end{columns}
+
+  \vspace{8pt}
+  \begin{nota}
+    \textit{Objetivos:}
+    definir y aplicar operacionalización~$\cdot$
+    clasificar variables por escala de medición~$\cdot$
+    distinguir precisión, exactitud y validez
+  \end{nota}
+\end{frame}
+
+% Slide 2b — Advance organizer: mapa del estudio
+\begin{frame}{¿Dónde encaja esta clase?}
+  \begin{center}
+  \resizebox{0.95\textwidth}{!}{%
+  \begin{tikzpicture}[
+    font=\small,
+    box/.style={rectangle, rounded corners=3pt, draw=primary,
+                fill=bglight, text width=2.2cm, align=center,
+                minimum height=0.85cm, inner sep=5pt},
+    accentbox/.style={rectangle, rounded corners=3pt, draw=accent,
+                      fill=accent, text=white, text width=2.4cm, align=center,
+                      minimum height=0.85cm, inner sep=5pt,
+                      font=\small\bfseries},
+    arrow/.style={-{Stealth[length=5pt]}, line width=1pt, color=primary}
+  ]
+    \node[box] (rq)  {Pregunta de\\investigación};
+    \node[accentbox, right=1.4cm of rq] (meas) {Diseño de\\mediciones};
+    \node[box, right=1.4cm of meas] (data) {Datos\\del estudio};
+    \node[box, right=1.4cm of data] (inf)  {Inferencia\\sobre el fenómeno};
+
+    \draw[arrow] (rq)   -- (meas);
+    \draw[arrow] (meas) -- (data);
+    \draw[arrow] (data) -- (inf);
+
+    \node[below=0.5cm of meas, font=\footnotesize\itshape, color=accent,
+          text width=5cm, align=center]
+      {Precisión · Exactitud · Validez\\Escala de medición};
+  \end{tikzpicture}%
+  }
+  \end{center}
+
+  \vspace{4pt}
+  {\small Hoy construiremos el bloque \textbf{resaltado}: cómo convertir conceptos abstractos en variables medibles y confiables.}
+\end{frame}
+
+% ============================================================
+% SECCIÓN 1: Caso clínico
+% ============================================================
+\section{El problema de medir}
+
+% Slide 3
+\begin{frame}{¿Cómo mides obesidad?}
+  \begin{caso}[Caso clínico]
+    Quieres estudiar si la \textbf{obesidad} es un factor de riesgo
+    para diabetes mellitus tipo~2 (DM2) en adultos jóvenes de Lima.\\[6pt]
+    \textit{¿Qué variable mides?}
+  \end{caso}
+
+  \vspace{8pt}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}
+        \item Índice de masa corporal (IMC)
+        \item Perímetro abdominal
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}
+        \item Porcentaje de grasa corporal
+        \item Presencia de acantosis nigricans
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 4
+\begin{frame}{El problema}
+  Las cuatro medidas aplicadas al \textbf{mismo paciente} dan resultados distintos.
+
+  \vspace{10pt}
+  \begin{center}
+    \begin{tabular}{lcc}
+      \toprule
+      \textbf{Medida} & \textbf{Valor} & \textbf{Clasificación} \\
+      \midrule
+      IMC             & 28.4 kg/m²    & Sobrepeso \\
+      Perímetro abd.  & 94 cm         & Riesgo aumentado \\
+      \% grasa corp.  & 34\%          & Obesidad \\
+      Acantosis       & Presente      & Resistencia a la insulina \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+
+  \vspace{8pt}
+  \begin{center}
+    \textcolor{accent}{\textbf{¿Cuál es la «correcta»?}}
+  \end{center}
+\end{frame}
+
+% Slide 5
+\begin{frame}{La respuesta}
+  \begin{definicion}[Operacionalizar]
+    Definir de forma explícita y reproducible \textbf{cómo} se medirá
+    un concepto abstracto en el contexto de un estudio específico.\\[4pt]
+    No hay una medida «correcta» universal: la elección depende de
+    la pregunta de investigación.
+  \end{definicion}
+
+  \vspace{8pt}
+  El proceso de elegir y especificar estas medidas se llama
+  \textbf{operacionalización}.
+\end{frame}
+
+% ============================================================
+% SECCIÓN 2: Conceptos fundamentales
+% ============================================================
+\section{Conceptos fundamentales}
+
+% Slide 5 — TikZ: fenómeno → medición
+\begin{frame}{La brecha fenómeno → medición}
+  \begin{center}
+  \begin{tikzpicture}[
+    node distance=1.4cm,
+    box/.style={
+      rectangle, rounded corners=4pt,
+      draw=accent, line width=1.5pt,
+      fill=bglight, text width=3.2cm,
+      align=center, font=\small\bfseries,
+      minimum height=1cm, inner sep=6pt
+    },
+    arrow/.style={-{Stealth[length=6pt]}, line width=1.5pt, color=primary}
+  ]
+    \node[box] (fenomeno) {Fenómeno\\de interés\\{\footnotesize(obesidad)}};
+    \node[box, right=2.2cm of fenomeno] (medicion) {Medición\\en el estudio\\{\footnotesize(IMC, cm, \%)}};
+
+    \draw[arrow] (fenomeno) -- node[above, font=\footnotesize\itshape, color=textdark, align=center]
+      {operaciona-\\lización} (medicion);
+
+    \node[below=0.5cm of fenomeno, font=\footnotesize, color=textdark, text width=3.2cm, align=center]
+      {Concepto abstracto};
+    \node[below=0.5cm of medicion, font=\footnotesize, color=textdark, text width=3.2cm, align=center]
+      {Valor observable};
+  \end{tikzpicture}
+  \end{center}
+
+  \vspace{4pt}
+  \begin{center}
+    \footnotesize\textit{Adaptado de Browner et al. (2022), Figura 4.1}
+  \end{center}
+\end{frame}
+
+% Slide 6
+\begin{frame}{¿Qué es una variable?}
+  \begin{definicion}[Variable]
+    Atributo observable que \textbf{varía} entre individuos y que
+    puede ser medido o clasificado.
+  \end{definicion}
+
+  \vspace{8pt}
+  \textbf{Ejemplos clínicos:}
+  \begin{itemize}
+    \item Edad, sexo, nivel de hemoglobina
+    \item Diagnóstico de hipertensión (sí/no)
+    \item Grado de dolor (ninguno / leve / moderado / severo)
+    \item Número de gestaciones previas
+  \end{itemize}
+\end{frame}
+
+% Slide 7a
+\begin{frame}{¿Qué es operacionalizar?}
+  \begin{definicion}[Definición operacional]
+    Especificación \textbf{exacta} de cómo se medirá un concepto abstracto:
+    instrumento, unidad, punto de corte, protocolo.
+  \end{definicion}
+
+  \vspace{8pt}
+  Una buena definición operacional responde:
+  \begin{itemize}
+    \item \textbf{¿Qué} instrumento se usa?
+    \item \textbf{¿Cómo} se aplica (posición, condiciones, repeticiones)?
+    \item \textbf{¿Qué} se registra y en qué unidad?
+  \end{itemize}
+\end{frame}
+
+% Slide 7b
+\begin{frame}{Ejemplo de definición operacional}
+  \textbf{Fuerza de prensión con dinamómetro} (Browner et al., 2022, Apéndice~4A):
+
+  \vspace{6pt}
+  \begin{nota}
+    «Coloque el dinamómetro en la mano derecha con el dial hacia la palma.
+    El brazo debe estar flexionado a 90$^{\circ}$ con el antebrazo paralelo al suelo.
+    Apriete tan fuerte como pueda mientras cuento hasta tres.
+    Registre en kilogramos, al 0.5~kg más cercano.
+    Repita el procedimiento para el brazo izquierdo.»
+  \end{nota}
+
+  \vspace{6pt}
+  \begin{definicion}[¿Por qué es una buena definición?]
+    Instrumento específico (dinamómetro) $\cdot$
+    posición exacta (90$^{\circ}$, antebrazo paralelo) $\cdot$
+    unidad clara (kg, al 0.5) $\cdot$
+    protocolo verbal estandarizado y reproducible
+  \end{definicion}
+\end{frame}
+
+% ============================================================
+% SECCIÓN 3: Tipos de variables
+% ============================================================
+\section{Tipos de variables}
+
+% Slide 9
+\begin{frame}{Dos grandes familias}
+  \begin{center}
+  \resizebox{0.95\textwidth}{!}{%
+  \begin{tikzpicture}[
+    font=\small,
+    box/.style={rectangle, rounded corners=3pt, draw=primary,
+                fill=bglight, text width=2.6cm, align=center,
+                minimum height=0.8cm, inner sep=4pt},
+    root/.style={rectangle, rounded corners=3pt, draw=accent,
+                 fill=accent, text=white, font=\small\bfseries,
+                 text width=2.8cm, align=center,
+                 minimum height=0.9cm, inner sep=4pt},
+    line/.style={draw=primary, line width=1pt}
+  ]
+    % Root
+    \node[root] (var) at (0, 0) {Variable};
+
+    % Level 1 — symmetric at ±2.8 cm
+    \node[box] (cat) at (-2.8, -1.4) {Categórica};
+    \node[box] (num) at ( 2.8, -1.4) {Numérica};
+    \draw[line] (var) -- (cat);
+    \draw[line] (var) -- (num);
+
+    % Level 2 — 3 nodes under Categórica, spaced 2.4 cm apart, inner sep=2pt
+    \node[box, text width=1.8cm, inner sep=2pt] (dic) at (-5.2, -2.8) {Dicotómica};
+    \node[box, text width=1.8cm, inner sep=2pt] (nom) at (-2.8, -2.8) {Nominal};
+    \node[box, text width=1.8cm, inner sep=2pt] (ord) at (-0.4, -2.8) {Ordinal};
+    \draw[line] (cat) -- (dic);
+    \draw[line] (cat) -- (nom);
+    \draw[line] (cat) -- (ord);
+
+    % Level 2 — 2 nodes under Numérica, spaced 2.4 cm apart, inner sep=2pt
+    \node[box, text width=1.8cm, inner sep=2pt] (con) at ( 1.6, -2.8) {Continua};
+    \node[box, text width=1.8cm, inner sep=2pt] (dis) at ( 4.0, -2.8) {Discreta};
+    \draw[line] (num) -- (con);
+    \draw[line] (num) -- (dis);
+  \end{tikzpicture}%
+  }
+  \end{center}
+\end{frame}
+
+% Slide 10
+\begin{frame}{Variables categóricas}
+  \begin{columns}[T]
+    \begin{column}{0.32\textwidth}
+      \textbf{\textcolor{accent}{Dicotómica}}\\[4pt]
+      Dos categorías\\[4pt]
+      \textit{Vivo / muerto}\\
+      \textit{Embarazada / no}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \textbf{\textcolor{accent}{Nominal}}\\[4pt]
+      Categorías sin orden\\[4pt]
+      \textit{Tipo de sangre}\\
+      \textit{Identidad de género}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \textbf{\textcolor{accent}{Ordinal}}\\[4pt]
+      Categorías con orden; intervalos no cuantificables\\[4pt]
+      \textit{Dolor: ninguno /}\\
+      \textit{leve / moderado / severo}
+    \end{column}
+  \end{columns}
+
+  \vspace{8pt}
+  \begin{nota}
+    Poder estadístico: nominal/dicotómica $<$ ordinal $<$ discreta $<$ continua
+  \end{nota}
+\end{frame}
+
+% Slide 11
+\begin{frame}{Variables numéricas}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{\textcolor{accent}{Continua}}\\[4pt]
+      Infinitos valores posibles en una escala\\[6pt]
+      \begin{itemize}
+        \item Hemoglobina (g/dL)
+        \item Presión arterial (mmHg)
+        \item IMC (kg/m²)
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{\textcolor{accent}{Discreta (conteo)}}\\[4pt]
+      Número finito de valores, típicamente enteros\\[6pt]
+      \begin{itemize}
+        \item N.º de gestaciones
+        \item N.º de hospitalizaciones
+        \item N.º de medicamentos
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{8pt}
+  \begin{nota}
+    Una variable discreta con $\geq 6$ valores posibles se comporta como continua en análisis.
+  \end{nota}
+\end{frame}
+
+% Slide 12
+\begin{frame}{Regla de oro: prefiere variables continuas}
+  \textbf{Jerarquía de poder estadístico} (Browner et al., 2022, Tabla~4.1):
+
+  \vspace{8pt}
+  \begin{center}
+    \begin{tikzpicture}[font=\small]
+      \node[rectangle, fill=accent, text=white, rounded corners=2pt,
+            minimum width=2.0cm, minimum height=0.7cm, align=center,
+            font=\footnotesize\bfseries] at (0, 0) {Continua};
+      \node[rectangle, fill=accent!60, text=textdark, rounded corners=2pt,
+            minimum width=2.0cm, minimum height=0.7cm, align=center,
+            font=\footnotesize\bfseries] at (2.5, 0) {Discreta};
+      \node[rectangle, fill=accent!35, text=textdark, rounded corners=2pt,
+            minimum width=2.0cm, minimum height=0.7cm, align=center,
+            font=\footnotesize\bfseries] at (5, 0) {Ordinal};
+      \node[rectangle, fill=accent!15, text=textdark, draw=accent!50, rounded corners=2pt,
+            minimum width=2.0cm, text width=2.0cm, minimum height=0.7cm, align=center,
+            font=\footnotesize\bfseries] at (7.8, 0) {Nominal/\\Dicotómica};
+      \draw[-{Stealth}, line width=1.5pt, color=accent]
+        (9.2,0) -- (10.5,0)
+        node[right, font=\footnotesize, color=textdark] {más poder};
+    \end{tikzpicture}
+  \end{center}
+
+  \vspace{8pt}
+  \begin{clave}
+    No conviertas IMC en «obeso / no obeso» si puedes quedarte con el
+    número. Más información = mayor poder = menor tamaño de muestra.
+  \end{clave}
+\end{frame}
+
+% ============================================================
+% SECCIÓN 4: Precisión y exactitud
+% ============================================================
+\section{Precisión y exactitud}
+
+% Slide 13
+\begin{frame}{¿Por qué dos médicos obtienen valores distintos?}
+  \begin{caso}[Retomamos el caso]
+    Dos residentes toman la presión arterial al mismo paciente con el
+    mismo tensiómetro, tres veces cada uno. Los valores difieren.\\[4pt]
+    ¿Por qué?
+  \end{caso}
+
+  \vspace{8pt}
+  \textbf{Fuentes de \textcolor{accent}{error aleatorio}:}
+  \begin{itemize}
+    \item \textbf{Observador:} velocidad de deflación del manguito, técnica
+    \item \textbf{Instrumento:} manómetro descalibrado, temperatura
+    \item \textbf{Participante:} variación fisiológica, esfuerzo, ansiedad
+  \end{itemize}
+\end{frame}
+
+% Slide 14
+\begin{frame}{Precisión}
+  \begin{definicion}[Precisión]
+    Grado en que una variable produce el \textbf{mismo valor} cuando se
+    mide repetidamente. Sinónimos: reproducibilidad, confiabilidad,
+    consistencia.\\[4pt]
+    Mayor precisión = menor error aleatorio = \textbf{mayor poder estadístico}.
+  \end{definicion}
+
+  \vspace{8pt}
+  \textbf{¿Cómo se evalúa?}
+  \begin{itemize}
+    \item Variables continuas: desviación estándar intra-sujeto, coef.\ de variación
+    \item Variables categóricas: porcentaje de acuerdo, \textbf{Kappa de Cohen ($\kappa$)}
+          \cite{Cohen1960-kk}, coeficiente de correlación intraclase (CCI)
+          \cite{Shrout1979-qv}
+  \end{itemize}
+\end{frame}
+
+% Slide 15
+\begin{frame}{Exactitud}
+  \begin{definicion}[Exactitud]
+    Grado en que una variable se \textbf{aproxima al valor verdadero}.
+    Depende de minimizar el \textbf{sesgo} (error sistemático), además
+    de maximizar la precisión.
+  \end{definicion}
+
+  \vspace{8pt}
+  \textbf{Fuentes de \textcolor{accent}{sesgo}:}
+  \begin{itemize}
+    \item \textbf{Observador:} tendencia inconsciente a redondear valores
+    \item \textbf{Instrumento:} balanza no calibrada $\to$ pesos consistentemente bajos
+    \item \textbf{Participante:} sesgo de recuerdo, deseabilidad social
+  \end{itemize}
+
+  \vspace{4pt}
+  \textbf{¿Cómo se evalúa?} Comparación con un \textbf{estándar de oro}
+  (\textit{gold standard}).
+\end{frame}
+
+% Slide 15b — Exactitud vs. validez
+\begin{frame}[t]{Exactitud vs.\ validez: ¿cuál es la diferencia?}
+  \footnotesize
+  \begin{tabular}{p{2.8cm} p{4.6cm} p{4.6cm}}
+    \toprule
+    & \textbf{\textcolor{accent}{Exactitud}} & \textbf{\textcolor{accent}{Validez}} \\
+    \midrule
+    \textbf{Pregunta} &
+      ¿Cuánto me alejo del valor verdadero? &
+      ¿Estoy midiendo el fenómeno correcto? \\[4pt]
+    \textbf{Tipo de error} &
+      Sesgo sistemático &
+      Error de constructo \\[4pt]
+    \textbf{Se evalúa con} &
+      Estándar de oro cuantitativo &
+      Tipos de validez \textit{(contenido, constructo\ldots)} \\[4pt]
+    \textbf{Ejemplo} &
+      Balanza descalibrada (pesos sistemáticamente bajos) &
+      Creatinina como indicador de función renal \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{6pt}
+  \begin{nota}
+    Exactitud $\to$ «¿bien medido?» \quad·\quad Validez $\to$ «¿bien elegido?»
+  \end{nota}
+\end{frame}
+
+% Slide 16 — TikZ: Las 4 dianas
+\begin{frame}{Precisión vs.\ exactitud: las 4 dianas}
+  \begin{center}
+  \begin{tikzpicture}[scale=0.60]
+
+    % shared style for ring outlines
+    \tikzset{ring/.style={draw=textdark!20, line width=0.35pt}}
+
+    % Panel TL: Alta precisión, alta exactitud
+    \begin{scope}[shift={(-3.2, 2.5)}]
+      \fill[bglight] (0,0) circle (1.4);
+      \fill[white]   (0,0) circle (0.95);
+      \fill[bglight] (0,0) circle (0.5);
+      \draw[ring] (0,0) circle (1.4);
+      \draw[ring] (0,0) circle (0.95);
+      \draw[ring] (0,0) circle (0.5);
+      \foreach \dx/\dy in {0.08/0.06, -0.07/0.09, 0.05/-0.08, -0.09/-0.05, 0.1/0.03}
+        \fill[accent] (\dx,\dy) circle (0.1);
+      \node[above, font=\scriptsize\bfseries, color=primary] at (0,1.5) {Alta precisión};
+      \node[below, font=\scriptsize\bfseries, color=primary] at (0,-1.5) {Alta exactitud};
+    \end{scope}
+
+    % Panel TR: Alta precisión, baja exactitud
+    \begin{scope}[shift={(3.2, 2.5)}]
+      \fill[bglight] (0,0) circle (1.4);
+      \fill[white]   (0,0) circle (0.95);
+      \fill[bglight] (0,0) circle (0.5);
+      \draw[ring] (0,0) circle (1.4);
+      \draw[ring] (0,0) circle (0.95);
+      \draw[ring] (0,0) circle (0.5);
+      \foreach \dx/\dy in {0.65/0.50, 0.60/0.56, 0.68/0.44, 0.63/0.52, 0.62/0.58}
+        \fill[accent] (\dx,\dy) circle (0.1);
+      \node[above, font=\scriptsize\bfseries, color=primary] at (0,1.5) {Alta precisión};
+      \node[below, font=\scriptsize\bfseries, color=primary] at (0,-1.5) {Baja exactitud (sesgo)};
+    \end{scope}
+
+    % Panel BL: Baja precisión, alta exactitud
+    \begin{scope}[shift={(-3.2, -2.5)}]
+      \fill[bglight] (0,0) circle (1.4);
+      \fill[white]   (0,0) circle (0.95);
+      \fill[bglight] (0,0) circle (0.5);
+      \draw[ring] (0,0) circle (1.4);
+      \draw[ring] (0,0) circle (0.95);
+      \draw[ring] (0,0) circle (0.5);
+      \foreach \dx/\dy in {0.6/-0.5, -0.7/0.4, 0.3/0.8, -0.5/-0.7, 0.8/0.2}
+        \fill[accent] (\dx,\dy) circle (0.1);
+      \node[above, font=\scriptsize\bfseries, color=primary] at (0,1.5) {Baja precisión};
+      \node[below, font=\scriptsize\bfseries, color=primary] at (0,-1.5) {Alta exactitud};
+    \end{scope}
+
+    % Panel BR: Baja precisión, baja exactitud
+    \begin{scope}[shift={(3.2, -2.5)}]
+      \fill[bglight] (0,0) circle (1.4);
+      \fill[white]   (0,0) circle (0.95);
+      \fill[bglight] (0,0) circle (0.5);
+      \draw[ring] (0,0) circle (1.4);
+      \draw[ring] (0,0) circle (0.95);
+      \draw[ring] (0,0) circle (0.5);
+      \foreach \dx/\dy in {0.9/0.5, -0.8/-0.6, 0.4/-0.9, -0.6/0.8, 0.7/-0.3}
+        \fill[accent] (\dx,\dy) circle (0.1);
+      \node[above, font=\scriptsize\bfseries, color=primary] at (0,1.5) {Baja precisión};
+      \node[below, font=\scriptsize\bfseries, color=primary] at (0,-1.5) {Baja exactitud};
+    \end{scope}
+
+    % Dividing lines
+    \draw[color=textdark!15, line width=0.5pt] (0,-4.1) -- (0,4.1);
+    \draw[color=textdark!15, line width=0.5pt] (-5.5,0) -- (5.5,0);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-20pt}
+  \begin{center}
+    \footnotesize\textit{Adaptado de Browner et al. (2022), Figura 4.2}
+  \end{center}
+\end{frame}
+
+% ============================================================
+% SECCIÓN 5: Confiabilidad y validez
+% ============================================================
+\section{Confiabilidad y validez}
+
+% Slide 17
+\begin{frame}{Confiabilidad en la práctica}
+  \begin{caso}[¿Dos médicos, mismo diagnóstico?]
+    Dos internistas examinan de forma independiente a 50 pacientes y
+    clasifican cada caso como «anemia» o «no anemia».
+    ¿Con qué frecuencia coinciden?
+  \end{caso}
+  \vspace{-2pt}
+  \begin{columns}[T]
+    \begin{column}{0.55\textwidth}
+      \textbf{Confiabilidad inter-observador}\\[0pt]
+      Medida con el \textbf{Kappa de Cohen ($\kappa$)}:\\[0pt]
+      \begin{tabular}{ll}
+        $\kappa < 0.4$ & Pobre \\
+        $0.4$--$0.6$   & Moderada \\
+        $0.6$--$0.8$   & Buena \\
+        $> 0.8$        & Excelente \\
+      \end{tabular}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \begin{nota}
+        Kappa corrige el acuerdo por azar.\\
+        \textit{Ej.:} 80\% observado, 60\% por azar
+        $\Rightarrow$ $\kappa = 0.50$ (moderada).\\
+        El «\% de acuerdo» es engañoso si una categoría domina.
+      \end{nota}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 18
+\begin{frame}{Validez}
+  \begin{definicion}[Validez]
+    Dimensión cualitativa de la exactitud: qué tan bien una medición
+    \textbf{representa el fenómeno} que pretende medir.
+  \end{definicion}
+
+  \vspace{4pt}
+  \textbf{Ejemplo (Browner):}
+
+  {\small
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Creatinina sérica}\\
+      \textit{Precisa y exacta}\\[2pt]
+      Pero: influida por la \textbf{masa muscular}.
+      Un paciente con poca masa muscular puede tener
+      IRC con creatinina sérica normal.
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Cistatina C}\\
+      \textit{Precisa y exacta}\\[2pt]
+      \textbf{Más válida} como medida de función renal:
+      no depende de masa muscular.
+    \end{column}
+  \end{columns}
+  }
+\end{frame}
+
+% Slide 19
+\begin{frame}{Tipos de validez}
+  \footnotesize
+  \begin{tabular}{p{3.2cm} p{6.7cm} p{2.1cm}}
+    \toprule
+    \textbf{Tipo} & \textbf{Pregunta que responde} & \textbf{Ancla} \\
+    \midrule
+    \textbf{De contenido} &
+      ¿La medida cubre \textit{todos} los aspectos del fenómeno?
+      \textit{(SF-36 para calidad de vida)} &
+      ¿Cubre todo? \\[3pt]
+    \textbf{De apariencia} \textit{(cara)} &
+      ¿La medida parece razonable a simple vista?
+      \textit{(fragilidad = debilidad + fatiga + pérdida de peso)} &
+      ¿Parece correcto? \\[3pt]
+    \textbf{De constructo} &
+      ¿La medida se comporta como predice la teoría?
+      \textit{(aislamiento social separa a quienes tienen pocas amistades)} &
+      ¿Predice la teoría? \\[3pt]
+    \textbf{De criterio} &
+      ¿La medida correlaciona con otra establecida?
+      \textit{(nueva prueba de masa muscular vs.\ fuerza de prensión)} &
+      ¿Coincide con otro? \\
+    \bottomrule
+  \end{tabular}
+\end{frame}
+
+% Slide 20
+\begin{frame}{El estándar de oro (\textit{gold standard})}
+  \begin{definicion}[Estándar de oro]
+    Medición de referencia que se cree que representa mejor
+    el \textbf{valor verdadero} de la característica.
+  \end{definicion}
+
+  \vspace{4pt}
+  {\small
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Cuando existe:}\\[2pt]
+      Permite calcular exactitud cuantitativamente.\\[2pt]
+      \textit{Ej.: biopsia para histología de cáncer}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Cuando no existe:}\\[2pt]
+      Variables subjetivas (dolor, calidad de vida).\\[2pt]
+      Usar tipos de validez de la diapositiva anterior.
+    \end{column}
+  \end{columns}
+  }
+
+  \vspace{4pt}
+  {\footnotesize\color{textdark!70}\itshape
+    Elegir el \textit{gold standard} puede ser difícil; requiere consenso
+    de expertos y revisión de la literatura.}
+\end{frame}
+
+% ============================================================
+% SECCIÓN 6: Síntesis
+% ============================================================
+\section{Síntesis}
+
+% Slide 21
+\begin{frame}{El mapa completo}
+  \begin{center}
+  \resizebox{0.95\textwidth}{!}{%
+  \begin{tikzpicture}[
+    font=\small,
+    box/.style={rectangle, rounded corners=3pt, draw=primary,
+                fill=bglight, text width=2.2cm, align=center,
+                minimum height=0.85cm, inner sep=5pt},
+    accentbox/.style={rectangle, rounded corners=3pt, draw=accent,
+                      fill=accent!10, text width=2.4cm, align=center,
+                      minimum height=0.85cm, inner sep=5pt,
+                      font=\small\bfseries},
+    arrow/.style={-{Stealth[length=5pt]}, line width=1pt, color=primary}
+  ]
+    \node[box] (rq)  {Pregunta de\\investigación};
+    \node[accentbox, right=1.4cm of rq] (meas) {Diseño de\\mediciones};
+    \node[box, right=1.4cm of meas] (data) {Datos\\del estudio};
+    \node[box, right=1.4cm of data] (inf)  {Inferencia\\sobre el fenómeno};
+
+    \draw[arrow] (rq)   -- (meas);
+    \draw[arrow] (meas) -- (data);
+    \draw[arrow] (data) -- (inf);
+
+    \node[below=0.5cm of meas, font=\footnotesize\itshape, color=accent,
+          text width=5cm, align=center]
+      {Precisión · Exactitud · Validez\\Escala de medición};
+  \end{tikzpicture}%
+  }
+  \end{center}
+
+  \vspace{4pt}
+  {\small\textit{La validez de las conclusiones del estudio depende de qué tan
+  bien el diseño de mediciones representa los fenómenos de interés.}}
+\end{frame}
+
+% Slide 22
+\begin{frame}{¿Cómo medirías obesidad ahora?}
+  {\small\textit{Caso: ¿La obesidad es un factor de riesgo para DM2 en adultos jóvenes de Lima?}}
+
+  \vspace{4pt}
+  {\footnotesize
+  \begin{tabular}{p{4.0cm} p{9.0cm}}
+    \toprule
+    \textbf{Medida} & \textbf{Decisión} \\
+    \midrule
+    IMC (kg/m²) & Continua, alta precisión. Útil si el mecanismo es acumulación de grasa total. \\[2pt]
+    Perímetro abd. & Continua, captura grasa visceral. Más válida para riesgo metabólico. \\[2pt]
+    \% grasa corporal & Continua, requiere equipo especial (DEXA). \\[2pt]
+    Acantosis nigricans & Dicotómica (presente/ausente). Señal clínica de resistencia a la insulina; no cuantifica grasa directamente. \\[2pt]
+    Dicotómica (obeso/no) & Pierde información. Evitar si es posible. \\
+    \bottomrule
+  \end{tabular}
+  }
+\end{frame}
+
+% ============================================================
+% SECCIÓN 7: Mensajes clave y referencias
+% ============================================================
+\section{Mensajes clave}
+
+
+% Slide 23a
+\begin{frame}{Mensajes clave (1/2)}
+  \begin{clave}
+    \begin{enumerate}
+      \item \textbf{Operacionalizar} es definir exactamente cómo medir
+            un concepto abstracto. La definición operacional debe ser
+            explícita, reproducible y adecuada a la pregunta de investigación.
+      \item Las variables \textbf{continuas} tienen mayor poder estadístico
+            que las categóricas: no las dicotomices innecesariamente.
+      \item \textbf{Precisión} = sin error aleatorio (reproducibilidad).
+            \textbf{Exactitud} = cerca del valor verdadero (sin sesgo).
+    \end{enumerate}
+  \end{clave}
+\end{frame}
+
+% Slide 23b
+\begin{frame}{Mensajes clave (2/2)}
+  \begin{clave}
+    \begin{enumerate}
+      \setcounter{enumi}{3}
+      \item \textbf{Validez} es qué tan bien la medición representa
+            el fenómeno: busca instrumentos ya validados antes de crear uno nuevo.
+      \item Toda medición tiene limitaciones. El objetivo es
+            \textbf{minimizarlas}, no eliminarlas.
+    \end{enumerate}
+  \end{clave}
+\end{frame}
+
+% ============================================================
+% SECCIÓN 8: Ejemplo integrador — El ingreso como variable
+% ============================================================
+\section{Ejemplo integrador}
+
+% Slide 24a
+\begin{frame}{¿Cómo mides ingreso?}
+  \begin{caso}[Caso integrador]
+    Quieres estimar el \textbf{efecto del ingreso} en la incidencia de
+    enfermedades crónicas en adultos de Lima.\\[6pt]
+    \textit{¿Qué variable usas como exposición?}
+  \end{caso}
+
+  \vspace{8pt}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}
+        \item Ingreso bruto (total ganado)
+        \item Ingreso neto (tras impuestos)
+        \item Ingreso disponible (tras gastos no discrecionales)
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}
+        \item Ingreso equivalizado del hogar
+        \item Quintil de ingreso
+        \item Estado de pobreza (sí / no)
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 24b — Panel A: defining the income measure
+\begin{frame}{Taxonomía del ingreso (A): ¿qué tipo de ingreso?}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{../Figures/Income A.png}\\[4pt]
+    {\tiny\itshape Adaptado de Igelström et al.\ (2024), Fig.~1A: Definiendo la medida de ingreso.}
+  \end{center}
+\end{frame}
+
+% Slide 24b2 — Panel B: defining the causal contrast
+\begin{frame}{Taxonomía del ingreso (B): ¿qué contraste causal?}
+  \begin{center}
+    \includegraphics[width=0.68\textwidth]{../Figures/Income B.png}\\[4pt]
+    {\tiny\itshape Adaptado de Igelström et al.\ (2024), Fig.~1B: Definiendo el contraste causal.}
+  \end{center}
+\end{frame}
+
+% Slide 24c — table
+\begin{frame}{Mismo hogar, distintos resultados}
+  {\small Hogar: 2 adultos + 2 hijos menores de 13 años, S/\,3{,}000/mes en total.}
+
+  \vspace{6pt}
+  \begin{center}
+  {\footnotesize
+  \begin{tabular}{p{4.6cm} r p{3.0cm}}
+    \toprule
+    \textbf{Operacionalización} & \textbf{Valor} & \textbf{Tipo de variable} \\
+    \midrule
+    Ingreso bruto (individual)     & S/\,1{,}500 & Continua \\
+    Ingreso neto (tras impuestos)  & S/\,1{,}350 & Continua \\
+    Ingreso disponible             & $\approx$S/\,900 & Continua \\
+    Ingreso equivalizado (OCDE)    & S/\,1{,}429 & Continua \\
+    Quintil de ingreso             & 2.\textsuperscript{o} quintil & Ordinal \\
+    Estado de pobreza              & Sí / No & Dicotómica \\
+    \bottomrule
+  \end{tabular}
+  }
+  \end{center}
+
+  \vspace{6pt}
+  \begin{nota}
+    Misma familia, seis respuestas distintas a «¿cuánto gana?»
+    \cite{Igelstrom2024-bq}.
+    Recuerda: prefiere continuas sobre dicotómicas (Slide 12).
+  \end{nota}
+\end{frame}
+
+% Slide 24d — synthesis clave
+\begin{frame}{¿Qué nos enseña este caso?}
+  \begin{clave}
+    \begin{enumerate}
+      \item La operacionalización del ingreso \textbf{cambia la pregunta causal},
+            no solo la medición: ingreso neto $\neq$ ingreso disponible como
+            exposición.
+      \item Cada elección en la cadena
+            (fuente $\to$ ajuste $\to$ unidad $\to$ comparación)
+            afecta precisión, exactitud y validez.
+      \item En el \textbf{mapa del estudio} (Slides 2 y 23): lo que decides
+            en «Diseño de mediciones» determina directamente la
+            inferencia que podrás hacer al final.
+    \end{enumerate}
+  \end{clave}
+  \vspace{4pt}
+  {\footnotesize\color{textdark!70}\itshape
+  Fuente: Igelström et al.\ \cite{Igelstrom2024-bq}}
+\end{frame}
+
+% Slide 25
+\begin{frame}[allowframebreaks]{Referencias}
+  \nocite{Browner2022-yv, Streiner2024-my, Bland1986-di, Igelstrom2024-bq}
+  \printbibliography[heading=none]
+\end{frame}
+
+\end{document}

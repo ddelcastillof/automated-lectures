@@ -1,0 +1,18 @@
+project:
+  type: website
+  output-dir: ../docs
+
+website:
+  title: "ABC of Research — ADIECS"
+
+format:
+  revealjs:
+    theme: [default, theme-template.scss]
+    slide-number: true
+    progress: true
+    transition: fade
+    transition-speed: fast
+    highlight-style: github
+    lang: es
+    fig-align: center
+    link-external-newwindow: true

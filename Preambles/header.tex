@@ -1,0 +1,119 @@
+% =============================================================
+% header.tex — Preamble for Operacionalización de Variables
+% ADIECS ABC of Research — UNMSM San Fernando
+% XeLaTeX + Metropolis
+% =============================================================
+
+% --- Theme ---------------------------------------------------
+\usetheme[progressbar=frametitle, numbering=fraction]{metropolis}
+
+% --- Fonts ---------------------------------------------------
+% Let metropolis handle fonts; override only if Fira Sans is installed.
+% Fira Sans not required — XeLaTeX will use the system sans-serif fallback.
+\usepackage{fontspec}
+
+% --- Language ------------------------------------------------
+\usepackage[spanish, es-noquoting]{babel}
+\usepackage{csquotes}
+
+% --- Colors --------------------------------------------------
+\usepackage{xcolor}
+\definecolor{primary}{HTML}{2C3E50}    % slate blue-gray
+\definecolor{accent}{HTML}{1A7A8A}     % soft teal
+\definecolor{bglight}{HTML}{ECF0F1}   % light gray surface
+\definecolor{offwhite}{HTML}{FAFAFA}  % background
+\definecolor{textdark}{HTML}{2D2D2D}  % body text
+\definecolor{casebg}{HTML}{FEF9EE}    % warm cream for caso boxes
+\definecolor{amber}{HTML}{D4A017}     % amber accent for caso border
+
+% Apply metropolis color scheme
+\setbeamercolor{frametitle}{fg=white, bg=primary}
+\setbeamercolor{title separator}{fg=accent}
+\setbeamercolor{progress bar}{fg=accent, bg=bglight}
+\setbeamercolor{normal text}{fg=textdark, bg=offwhite}
+\setbeamercolor{alerted text}{fg=accent}
+\setbeamercolor{example text}{fg=primary}
+\setbeamercolor{block title}{fg=white, bg=accent}
+\setbeamercolor{block body}{fg=textdark, bg=bglight}
+
+% --- TikZ ----------------------------------------------------
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric, decorations.pathreplacing}
+
+% --- Boxes (tcolorbox) ---------------------------------------
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+% definicion: teal left-rule box
+\newtcolorbox{definicion}[1][]{
+  enhanced,
+  colback=bglight,
+  colframe=accent,
+  leftrule=4pt,
+  toprule=0pt,
+  bottomrule=0pt,
+  rightrule=0pt,
+  arc=0pt,
+  boxsep=4pt,
+  left=6pt,
+  title={\textbf{\textcolor{accent}{#1}}},
+  detach title,
+  before upper={\tcbtitle\par\smallskip},
+  fontupper=\small,
+}
+
+% caso: warm cream box for clinical scenarios
+\newtcolorbox{caso}[1][Caso clínico]{
+  enhanced,
+  colback=casebg,
+  colframe=amber,
+  leftrule=4pt,
+  toprule=0.5pt,
+  bottomrule=0.5pt,
+  rightrule=0.5pt,
+  arc=2pt,
+  boxsep=4pt,
+  left=6pt,
+  title={\textbf{\textcolor{amber}{#1}}},
+  detach title,
+  before upper={\tcbtitle\par\smallskip},
+  fontupper=\small,
+}
+
+% clave: light teal bg, dark text
+\newtcolorbox{clave}[1][Mensaje clave]{
+  enhanced,
+  colback=accent!20,
+  colframe=accent,
+  colupper=textdark,
+  arc=2pt,
+  boxsep=4pt,
+  left=6pt,
+  title={\textbf{\textcolor{accent}{#1}}},
+  detach title,
+  before upper={\tcbtitle\par\smallskip},
+  fontupper=\small\color{textdark},
+}
+
+% nota: subtle gray smaller text
+\newtcolorbox{nota}[1][Nota]{
+  enhanced,
+  colback=bglight,
+  colframe=bglight,
+  arc=2pt,
+  boxsep=2pt,
+  fontupper=\footnotesize\color{textdark!70},
+}
+
+% --- Bibliography -------------------------------------------
+\usepackage[backend=bibtex, style=numeric, sorting=none]{biblatex}
+\addbibresource{../Bibliography_base.bib}
+
+% --- Hyperlinks ---------------------------------------------
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=accent, urlcolor=accent}
+
+% --- Misc ---------------------------------------------------
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{microtype}

@@ -5,8 +5,8 @@
      Keep this file under ~150 lines — Claude loads it every session.
      See the guide at docs/workflow-guide.html for full documentation. -->
 
-**Project:** [YOUR PROJECT NAME]
-**Institution:** [YOUR INSTITUTION]
+**Project:** Operacionalización de Variables — ADIECS ABC of Research
+**Institution:** UNMSM — Facultad de Medicina San Fernando
 **Branch:** main
 
 ---
@@ -107,24 +107,18 @@ python scripts/quality_score.py Quarto/file.qmd
 
 | Environment       | Effect        | Use Case       |
 |-------------------|---------------|----------------|
-| `[your-env]`      | [Description] | [When to use]  |
-
-<!-- Example entries (delete and replace with yours):
-| `keybox` | Gold background box | Key points |
-| `highlightbox` | Gold left-accent box | Highlights |
-| `definitionbox[Title]` | Blue-bordered titled box | Formal definitions |
--->
+| `definicion` | Teal left border, light gray bg | Formal definitions |
+| `caso` | Cream background | Clinical scenarios |
+| `clave` | Dark teal bg, white text | Key messages |
+| `nota` | Reduced font, gray text | Secondary information |
 
 ## Quarto CSS Classes
 
 | Class              | Effect        | Use Case       |
 |--------------------|---------------|----------------|
-| `[.your-class]`    | [Description] | [When to use]  |
-
-<!-- Example entries (delete and replace with yours):
-| `.smaller` | 85% font | Dense content slides |
-| `.positive` | Green bold | Good annotations |
--->
+| `.definicion` | Teal left border box | Definitions in RevealJS |
+| `.caso` | Cream background box | Clinical scenarios |
+| `.clave` | Dark teal bg, white text | Key messages |
 
 ---
 
@@ -132,5 +126,4 @@ python scripts/quality_score.py Quarto/file.qmd
 
 | Lecture | Beamer | Quarto | Key Content |
 |---------|--------|--------|-------------|
-| 1: [Topic] | `Lecture01_Topic.tex` | `Lecture1_Topic.qmd` | [Brief description] |
-| 2: [Topic] | `Lecture02_Topic.tex` | -- | [Brief description] |
+| 1: Operacionalización de Variables | `Lecture01_Operacionalizacion.tex` | `Lecture01_Operacionalizacion.qmd` | Variable types, precision, accuracy, validity — Browner Ch. 4 |

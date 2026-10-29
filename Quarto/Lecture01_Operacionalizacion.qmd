@@ -1,0 +1,546 @@
+---
+title: "Operacionalización de Variables"
+subtitle: "Cómo convertir conceptos en datos medibles"
+author:
+  - name: "Darwin del Castillo Fernández"
+    affiliation: "ABC of Research — ADIECS | UNMSM — San Fernando"
+date: "11/04/2026"
+format:
+  revealjs:
+    theme: [default, theme-template.scss]
+    slide-number: true
+    progress: true
+    transition: fade
+    lang: es
+bibliography: ../Bibliography_base.bib
+nocite: |
+  @Browner2022-yv, @Streiner2024-my, @Bland1986-di
+---
+
+## Agenda
+
+::: columns
+::: {.column width="50%"}
+**1.** Caso clínico
+
+**2.** ¿Qué es operacionalizar?
+:::
+::: {.column width="50%"}
+**3.** Tipos de variables
+
+**4.** Precisión, exactitud y validez
+:::
+:::
+
+::: {.nota}
+*Objetivos:* definir y aplicar operacionalización · clasificar variables por escala de medición · distinguir precisión, exactitud y validez
+:::
+
+## ¿Dónde encaja esta clase?
+
+```{=html}
+<div style="display:flex; align-items:flex-start; justify-content:center; gap:0.8em; margin-top:2em; flex-wrap:wrap;">
+  <div style="border:1px solid #2C3E50; border-radius:4px; padding:0.6em 1em; background:#ECF0F1; text-align:center; font-size:0.85em;">Pregunta de<br>investigación</div>
+  <div style="color:#1A7A8A; font-size:1.3em; font-weight:bold; padding-top:0.5em;">→</div>
+  <div style="border:2px solid #1A7A8A; border-radius:4px; padding:0.6em 1em; background:#1A7A8A; text-align:center; font-size:0.85em; font-weight:bold; color:white;">Diseño de<br>mediciones</div>
+  <div style="color:#1A7A8A; font-size:1.3em; font-weight:bold; padding-top:0.5em;">→</div>
+  <div style="border:1px solid #2C3E50; border-radius:4px; padding:0.6em 1em; background:#ECF0F1; text-align:center; font-size:0.85em;">Datos<br>del estudio</div>
+  <div style="color:#1A7A8A; font-size:1.3em; font-weight:bold; padding-top:0.5em;">→</div>
+  <div style="border:1px solid #2C3E50; border-radius:4px; padding:0.6em 1em; background:#ECF0F1; text-align:center; font-size:0.85em;">Inferencia<br>sobre el fenómeno</div>
+</div>
+<p style="text-align:center; font-style:italic; font-size:0.75em; color:#1A7A8A; margin-top:0.8em;">Precisión · Exactitud · Validez · Escala de medición</p>
+```
+
+Hoy construiremos el bloque **resaltado**: cómo convertir conceptos abstractos en variables medibles y confiables.
+
+# El problema de medir
+
+## ¿Cómo mides obesidad?
+
+::: {.caso}
+**Caso clínico:** Quieres estudiar si la **obesidad** es un factor de riesgo para diabetes
+mellitus tipo 2 (DM2) en adultos jóvenes de Lima. *¿Qué variable mides?*
+:::
+
+::: columns
+::: {.column width="50%"}
+- Índice de masa corporal (IMC)
+- Perímetro abdominal
+:::
+::: {.column width="50%"}
+- Porcentaje de grasa corporal
+- Presencia de acantosis nigricans
+:::
+:::
+
+## El problema
+
+Las cuatro medidas aplicadas al **mismo paciente** dan resultados distintos.
+
+| Medida | Valor | Clasificación |
+|--------|-------|--------------|
+| IMC | 28.4 kg/m² | Sobrepeso |
+| Perímetro abdominal | 94 cm | Riesgo aumentado |
+| % grasa corporal | 34% | Obesidad |
+| Acantosis | Presente | Resistencia a la insulina |
+
+**¿Cuál es la «correcta»?**
+
+## La respuesta
+
+::: {.definicion}
+Definir de forma explícita y reproducible **cómo** se medirá un concepto abstracto
+en el contexto de un estudio específico. No hay una medida «correcta» universal:
+la elección depende de la pregunta de investigación.
+:::
+
+El proceso de elegir y especificar estas medidas se llama **operacionalización**.
+
+# Conceptos fundamentales
+
+## La brecha fenómeno → medición
+
+```{=html}
+<div style="display:flex; align-items:flex-start; justify-content:center; gap:2.5em; margin-top:1.5em;">
+  <div style="text-align:center;">
+    <div style="border:2px solid #1A7A8A; border-radius:6px; padding:0.8em 1.5em; background:#ECF0F1; text-align:center;">
+      <strong>Fenómeno de interés</strong><br><em style="font-size:0.85em;">obesidad</em>
+    </div>
+    <div style="font-size:0.75em; color:#555; margin-top:0.4em; font-style:italic;">Concepto abstracto</div>
+  </div>
+  <div style="text-align:center; padding-top:0.6em;">
+    <div style="color:#1A7A8A; font-size:1.4em; font-weight:bold;">→</div>
+    <div style="font-size:0.75em; font-style:italic; color:#555;">operacionalización</div>
+  </div>
+  <div style="text-align:center;">
+    <div style="border:2px solid #1A7A8A; border-radius:6px; padding:0.8em 1.5em; background:#ECF0F1; text-align:center;">
+      <strong>Medición en el estudio</strong><br><em style="font-size:0.85em;">IMC, cm, %</em>
+    </div>
+    <div style="font-size:0.75em; color:#555; margin-top:0.4em; font-style:italic;">Valor observable</div>
+  </div>
+</div>
+<p style="text-align:center; font-style:italic; font-size:0.75em; color:#1A7A8A; margin-top:1em;">
+Adaptado de Browner et al. (2022), Fig. 4.1
+</p>
+```
+
+## ¿Qué es una variable?
+
+::: {.definicion}
+Atributo observable que **varía** entre individuos y que puede ser medido
+o clasificado.
+:::
+
+**Ejemplos clínicos:**
+
+- Edad, sexo, nivel de hemoglobina
+- Diagnóstico de hipertensión (sí/no)
+- Grado de dolor (ninguno / leve / moderado / severo)
+- Número de gestaciones previas
+
+## ¿Qué es operacionalizar?
+
+::: {.definicion}
+Especificación **exacta** de cómo se medirá un concepto abstracto:
+instrumento, unidad, punto de corte, protocolo.
+:::
+
+Una buena definición operacional responde:
+
+- **¿Qué** instrumento se usa?
+- **¿Cómo** se aplica (posición, condiciones, repeticiones)?
+- **¿Qué** se registra y en qué unidad?
+
+## Ejemplo de definición operacional
+
+**Fuerza de prensión con dinamómetro** (Browner et al., 2022, Apéndice 4A):
+
+::: {.nota}
+«Coloque el dinamómetro en la mano derecha con el dial hacia la palma.
+El brazo debe estar flexionado a 90° con el antebrazo paralelo al suelo.
+Apriete tan fuerte como pueda mientras cuento hasta tres.
+Registre en kilogramos, al 0.5 kg más cercano.
+Repita el procedimiento para el brazo izquierdo.»
+:::
+
+::: {.definicion}
+**¿Por qué es una buena definición?** Instrumento específico (dinamómetro) · posición exacta (90°, antebrazo paralelo) · unidad clara (kg, al 0.5) · protocolo verbal estandarizado y reproducible.
+:::
+
+# Tipos de variables
+
+## Dos grandes familias
+
+::: columns
+::: {.column width="50%"}
+**Categóricas**
+
+- Dicotómica (2 categorías)
+- Nominal (sin orden)
+- Ordinal (con orden)
+:::
+::: {.column width="50%"}
+**Numéricas**
+
+- Continua (infinitos valores)
+- Discreta / conteo (enteros)
+:::
+:::
+
+## Variables categóricas
+
+::: columns
+::: {.column width="33%"}
+**Dicotómica**
+
+Dos categorías
+
+*Vivo / muerto*
+*Embarazada / no*
+:::
+::: {.column width="33%"}
+**Nominal**
+
+Categorías sin orden
+
+*Tipo de sangre*
+*Identidad de género*
+:::
+::: {.column width="33%"}
+**Ordinal**
+
+Categorías con orden; intervalos no cuantificables
+
+*Dolor: ninguno / leve / moderado / severo*
+:::
+:::
+
+::: {.nota}
+Poder estadístico: nominal/dicotómica < ordinal < discreta < continua
+:::
+
+## Variables numéricas
+
+::: columns
+::: {.column width="50%"}
+**Continua**
+
+Infinitos valores posibles en una escala
+
+- Hemoglobina (g/dL)
+- Presión arterial (mmHg)
+- IMC (kg/m²)
+:::
+::: {.column width="50%"}
+**Discreta (conteo)**
+
+Número finito de valores, típicamente enteros
+
+- N.º de gestaciones
+- N.º de hospitalizaciones
+- N.º de medicamentos
+:::
+:::
+
+::: {.nota}
+Una variable discreta con ≥6 valores posibles se comporta como continua en análisis.
+:::
+
+## Regla de oro: prefiere variables continuas
+
+**Jerarquía de poder estadístico** (Browner, Tabla 4.1):
+
+```{=html}
+<div style="display:flex; align-items:center; gap:0.4em; margin:1em 0; flex-wrap:wrap;">
+  <div style="background:#1A7A8A;color:white;padding:0.4em 0.8em;border-radius:3px;font-weight:bold;font-size:0.85em;">Continua</div>
+  <div style="color:#2C3E50;font-size:1.1em;">›</div>
+  <div style="background:#72AFB9;color:#2C3E50;padding:0.4em 0.8em;border-radius:3px;font-weight:bold;font-size:0.85em;">Discreta</div>
+  <div style="color:#2C3E50;font-size:1.1em;">›</div>
+  <div style="background:#ACCDD3;color:#2C3E50;padding:0.4em 0.8em;border-radius:3px;font-weight:bold;font-size:0.85em;">Ordinal</div>
+  <div style="color:#2C3E50;font-size:1.1em;">›</div>
+  <div style="background:#CDDFE3;color:#2C3E50;border:1px solid #72AFB9;padding:0.4em 0.8em;border-radius:3px;font-weight:bold;font-size:0.85em;">Nominal / Dicotómica</div>
+  <div style="color:#1A7A8A;font-size:0.85em;margin-left:0.5em;">→ más poder</div>
+</div>
+```
+
+::: {.clave}
+No conviertas IMC en «obeso / no obeso» si puedes quedarte con el número.
+Más información = mayor poder = menor tamaño de muestra.
+:::
+
+# Precisión y exactitud
+
+## ¿Por qué dos médicos obtienen valores distintos?
+
+::: {.caso}
+**Caso:** Dos residentes toman la presión arterial al mismo paciente con el mismo
+tensiómetro, tres veces cada uno. Los valores difieren. ¿Por qué?
+:::
+
+**Fuentes de error aleatorio:**
+
+- **Observador:** velocidad de deflación del manguito, técnica
+- **Instrumento:** manómetro descalibrado, temperatura
+- **Participante:** variación fisiológica, esfuerzo, ansiedad
+
+## Precisión
+
+::: {.definicion}
+Grado en que una variable produce el **mismo valor** cuando se mide repetidamente.
+Sinónimos: reproducibilidad, confiabilidad, consistencia.
+
+Mayor precisión = menor error aleatorio = **mayor poder estadístico**.
+:::
+
+**¿Cómo se evalúa?**
+
+- Variables continuas: desviación estándar intra-sujeto, coeficiente de variación
+- Variables categóricas: porcentaje de acuerdo, **Kappa de Cohen** [@Cohen1960-kk], coeficiente de correlación intraclase [@Shrout1979-qv]
+
+## Exactitud
+
+::: {.definicion}
+Grado en que una variable se **aproxima al valor verdadero**. Depende de minimizar
+el **sesgo** (error sistemático), además de maximizar la precisión.
+:::
+
+**Fuentes de sesgo:**
+
+- **Observador:** tendencia inconsciente a redondear valores
+- **Instrumento:** balanza no calibrada → pesos consistentemente bajos
+- **Participante:** sesgo de recuerdo, deseabilidad social
+
+**¿Cómo se evalúa?** Comparación con un **estándar de oro** (*gold standard*).
+
+## Exactitud vs. validez: ¿cuál es la diferencia?
+
+::: {.smaller}
+
+| | **Exactitud** | **Validez** |
+|---|---|---|
+| **Pregunta** | ¿Cuánto me alejo del valor verdadero? | ¿Estoy midiendo el fenómeno correcto? |
+| **Tipo de error** | Sesgo sistemático | Error de constructo |
+| **Se evalúa con** | Estándar de oro cuantitativo | Tipos de validez *(contenido, constructo…)* |
+| **Ejemplo** | Balanza descalibrada (pesos sistemáticamente bajos) | Creatinina como indicador de función renal |
+
+:::
+
+::: {.nota}
+Exactitud → «¿bien medido?» · Validez → «¿bien elegido?»
+:::
+
+## Precisión vs. exactitud: las 4 dianas
+
+```{=html}
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:1em; margin-top:0.5em;">
+  <div style="text-align:center;">
+    <svg width="110" height="110" viewBox="-1.6 -1.6 3.2 3.2">
+      <circle cx="0" cy="0" r="1.4" fill="#ECF0F1" stroke="#2C3E50" stroke-width="0.04" stroke-opacity="0.2"/>
+      <circle cx="0" cy="0" r="0.95" fill="white" stroke="#2C3E50" stroke-width="0.04" stroke-opacity="0.15"/>
+      <circle cx="0" cy="0" r="0.5" fill="#ECF0F1" stroke="#2C3E50" stroke-width="0.04" stroke-opacity="0.2"/>
+      <circle cx="0.08" cy="0.06" r="0.1" fill="#1A7A8A"/>
+      <circle cx="-0.07" cy="0.09" r="0.1" fill="#1A7A8A"/>
+      <circle cx="0.05" cy="-0.08" r="0.1" fill="#1A7A8A"/>
+      <circle cx="-0.09" cy="-0.05" r="0.1" fill="#1A7A8A"/>
+      <circle cx="0.1" cy="0.03" r="0.1" fill="#1A7A8A"/>
+    </svg>
+    <div style="font-size:0.88em;font-weight:bold;color:#2C3E50;">Alta precisión, alta exactitud</div>
+  </div>
+  <div style="text-align:center;">
+    <svg width="110" height="110" viewBox="-1.6 -1.6 3.2 3.2">
+      <circle cx="0" cy="0" r="1.4" fill="#ECF0F1" stroke="#2C3E50" stroke-width="0.04" stroke-opacity="0.2"/>
+      <circle cx="0" cy="0" r="0.95" fill="white" stroke="#2C3E50" stroke-width="0.04" stroke-opacity="0.15"/>
+      <circle cx="0" cy="0" r="0.5" fill="#ECF0F1" stroke="#2C3E50" stroke-width="0.04" stroke-opacity="0.2"/>
+      <circle cx="0.65" cy="0.50" r="0.1" fill="#1A7A8A"/>
+      <circle cx="0.60" cy="0.56" r="0.1" fill="#1A7A8A"/>
+      <circle cx="0.68" cy="0.44" r="0.1" fill="#1A7A8A"/>
+      <circle cx="0.63" cy="0.52" r="0.1" fill="#1A7A8A"/>
+      <circle cx="0.62" cy="0.58" r="0.1" fill="#1A7A8A"/>
+    </svg>
+    <div style="font-size:0.88em;font-weight:bold;color:#2C3E50;">Alta precisión, baja exactitud (sesgo)</div>
+  </div>
+  <div style="text-align:center;">
+    <svg width="110" height="110" viewBox="-1.6 -1.6 3.2 3.2">
+      <circle cx="0" cy="0" r="1.4" fill="#ECF0F1" stroke="#2C3E50" stroke-width="0.04" stroke-opacity="0.2"/>
+      <circle cx="0" cy="0" r="0.95" fill="white" stroke="#2C3E50" stroke-width="0.04" stroke-opacity="0.15"/>
+      <circle cx="0" cy="0" r="0.5" fill="#ECF0F1" stroke="#2C3E50" stroke-width="0.04" stroke-opacity="0.2"/>
+      <circle cx="0.6" cy="-0.5" r="0.1" fill="#1A7A8A"/>
+      <circle cx="-0.7" cy="0.4" r="0.1" fill="#1A7A8A"/>
+      <circle cx="0.3" cy="0.8" r="0.1" fill="#1A7A8A"/>
+      <circle cx="-0.5" cy="-0.7" r="0.1" fill="#1A7A8A"/>
+      <circle cx="0.8" cy="0.2" r="0.1" fill="#1A7A8A"/>
+    </svg>
+    <div style="font-size:0.88em;font-weight:bold;color:#2C3E50;">Baja precisión, alta exactitud</div>
+  </div>
+  <div style="text-align:center;">
+    <svg width="110" height="110" viewBox="-1.6 -1.6 3.2 3.2">
+      <circle cx="0" cy="0" r="1.4" fill="#ECF0F1" stroke="#2C3E50" stroke-width="0.04" stroke-opacity="0.2"/>
+      <circle cx="0" cy="0" r="0.95" fill="white" stroke="#2C3E50" stroke-width="0.04" stroke-opacity="0.15"/>
+      <circle cx="0" cy="0" r="0.5" fill="#ECF0F1" stroke="#2C3E50" stroke-width="0.04" stroke-opacity="0.2"/>
+      <circle cx="0.9" cy="0.5" r="0.1" fill="#1A7A8A"/>
+      <circle cx="-0.8" cy="-0.6" r="0.1" fill="#1A7A8A"/>
+      <circle cx="0.4" cy="-0.9" r="0.1" fill="#1A7A8A"/>
+      <circle cx="-0.6" cy="0.8" r="0.1" fill="#1A7A8A"/>
+      <circle cx="0.7" cy="-0.3" r="0.1" fill="#1A7A8A"/>
+    </svg>
+    <div style="font-size:0.88em;font-weight:bold;color:#2C3E50;">Baja precisión, baja exactitud</div>
+  </div>
+</div>
+<p style="font-size:0.7em;font-style:italic;color:#555;margin-top:0.5em;text-align:center;">Adaptado de Browner et al. (2022), Figura 4.2</p>
+```
+
+# Confiabilidad y validez
+
+## Confiabilidad en la práctica
+
+::: {.caso}
+**¿Dos médicos, mismo diagnóstico?** Dos internistas examinan de forma independiente a
+50 pacientes y clasifican cada caso como «anemia» o «no anemia». ¿Con qué frecuencia coinciden?
+:::
+
+::: columns
+::: {.column width="55%"}
+**Confiabilidad inter-observador**
+
+Medida con el **Kappa de Cohen (κ):**
+
+| κ | Interpretación |
+|---|----------------|
+| < 0.4 | Pobre |
+| 0.4–0.6 | Moderada |
+| 0.6–0.8 | Buena |
+| > 0.8 | Excelente |
+:::
+::: {.column width="40%"}
+::: {.nota}
+Kappa corrige el acuerdo por azar.
+*Ej.:* 80% observado, 60% por azar → κ = 0.50 (moderada).
+El «% de acuerdo» es engañoso si una categoría domina.
+:::
+:::
+:::
+
+## Validez
+
+::: {.definicion}
+Dimensión cualitativa de la exactitud: qué tan bien una medición
+**representa el fenómeno** que pretende medir.
+:::
+
+**Ejemplo (Browner):**
+
+::: columns
+::: {.column width="50%"}
+**Creatinina sérica**
+
+*Precisa y exacta*
+
+Pero: influida por la **masa muscular**. Un paciente con poca masa muscular puede tener IRC con creatinina sérica normal.
+:::
+::: {.column width="50%"}
+**Cistatina C**
+
+*Precisa y exacta*
+
+**Más válida** como medida de función renal: no depende de masa muscular.
+:::
+:::
+
+## Tipos de validez
+
+::: {.smaller}
+
+| Tipo | Pregunta que responde | Ancla |
+|------|----------------------|-------|
+| **De contenido** | ¿La medida cubre *todos* los aspectos del fenómeno? *(SF-36 para calidad de vida)* | ¿Cubre todo? |
+| **De apariencia** *(cara)* | ¿La medida parece razonable a simple vista? *(fragilidad = debilidad + fatiga + pérdida de peso)* | ¿Parece correcto? |
+| **De constructo** | ¿La medida se comporta como predice la teoría? *(aislamiento social separa a quienes tienen pocas amistades)* | ¿Predice la teoría? |
+| **De criterio** | ¿La medida correlaciona con otra establecida? *(nueva prueba de masa muscular vs. fuerza de prensión)* | ¿Coincide con otro? |
+
+:::
+
+## El estándar de oro (*gold standard*)
+
+::: {.definicion}
+Medición de referencia que se cree que representa mejor el **valor verdadero** de la característica.
+:::
+
+::: columns
+::: {.column width="50%"}
+**Cuando existe:**
+
+Permite calcular exactitud cuantitativamente.
+
+*Ej.: biopsia para histología de cáncer*
+:::
+::: {.column width="50%"}
+**Cuando no existe:**
+
+Variables subjetivas (dolor, calidad de vida).
+
+Usar tipos de validez de la diapositiva anterior.
+:::
+:::
+
+::: {.nota}
+Elegir el *gold standard* puede ser difícil; requiere consenso de expertos y revisión de la literatura.
+:::
+
+# Síntesis
+
+## El mapa completo
+
+```{=html}
+<div style="display:flex; align-items:center; justify-content:center; gap:0.8em; margin-top:1.5em; flex-wrap:wrap;">
+  <div style="border:1px solid #2C3E50; border-radius:4px; padding:0.6em 1em; background:#ECF0F1; text-align:center; font-size:0.85em;">Pregunta de<br>investigación</div>
+  <div style="color:#1A7A8A; font-size:1.3em; font-weight:bold;">→</div>
+  <div style="border:2px solid #1A7A8A; border-radius:4px; padding:0.6em 1em; background:#e8f4f5; text-align:center; font-size:0.85em; font-weight:bold;">Diseño de<br>mediciones<br><span style="font-size:0.8em; color:#1A7A8A; font-weight:normal;">Precisión · Exactitud · Validez</span></div>
+  <div style="color:#1A7A8A; font-size:1.3em; font-weight:bold;">→</div>
+  <div style="border:1px solid #2C3E50; border-radius:4px; padding:0.6em 1em; background:#ECF0F1; text-align:center; font-size:0.85em;">Datos<br>del estudio</div>
+  <div style="color:#1A7A8A; font-size:1.3em; font-weight:bold;">→</div>
+  <div style="border:1px solid #2C3E50; border-radius:4px; padding:0.6em 1em; background:#ECF0F1; text-align:center; font-size:0.85em;">Inferencia<br>sobre el fenómeno</div>
+</div>
+<p style="text-align:center; font-style:italic; font-size:0.8em; color:#555; margin-top:1em;">
+La validez de las conclusiones depende de qué tan bien el diseño de mediciones representa los fenómenos de interés.
+</p>
+```
+
+## ¿Cómo medirías obesidad ahora?
+
+::: {.caso}
+**Caso:** ¿La obesidad es un factor de riesgo para DM2 en adultos jóvenes de Lima?
+:::
+
+::: {.smaller}
+
+| Medida | Decisión |
+|--------|----------|
+| IMC (kg/m²) | Continua, alta precisión. Útil si el mecanismo es acumulación de grasa total. |
+| Perímetro abdominal | Continua, captura grasa visceral. Más válida para riesgo metabólico. |
+| % grasa corporal | Continua, requiere equipo especial (DEXA). |
+| Acantosis nigricans | Dicotómica (presente/ausente). Señal clínica de resistencia a la insulina; no cuantifica grasa directamente. |
+| Dicotómica (obeso/no) | Pierde información. Evitar si es posible. |
+
+:::
+
+# Mensajes clave
+
+## Mensajes clave (1/2)
+
+::: {.clave}
+1. **Operacionalizar** es definir exactamente cómo medir un concepto abstracto. La definición operacional debe ser explícita, reproducible y adecuada a la pregunta de investigación.
+2. Las variables **continuas** tienen mayor poder estadístico que las categóricas: no las dicotomices innecesariamente.
+3. **Precisión** = sin error aleatorio (reproducibilidad). **Exactitud** = cerca del valor verdadero (sin sesgo).
+:::
+
+## Mensajes clave (2/2)
+
+::: {.clave}
+4. **Validez** es qué tan bien la medición representa el fenómeno: busca instrumentos ya validados antes de crear uno nuevo.
+5. Toda medición tiene limitaciones. El objetivo es **minimizarlas**, no eliminarlas.
+:::
+
+## Referencias
+
+::: {#refs}
+:::

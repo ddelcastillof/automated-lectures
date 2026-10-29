@@ -1,0 +1,1572 @@
+<head>
+<title>Ovid: </title>
+<link rel="stylesheet" type="text/css" href="./styles/ovid.csspack.css">
+<!--[if lt IE 10]>
+<link rel="stylesheet" type="text/css" href="./styles/ie-fixup-9.css">
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="./styles/unicode-ie.css">
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="./styles/ie-fixup-8.css">
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="./styles/ie-fixup-7.css">
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="./styles/ie-fixup-6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" href="./styles/jquery.tabs-ie.css" type="text/css" media="projection, screen">
+<![endif]-->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+{'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)
+[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);})
+(window,document,'script','dataLayer','GTM-NF86TTP8');
+</script>
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/8140fec3-25a2-4653-a7b3-cef8ebf591b3/OtAutoBlock.js"></script><script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-domain-script="8140fec3-25a2-4653-a7b3-cef8ebf591b3" charset="UTF-8"></script><script type="text/javascript" src="./scripts/bowser.min.js" ></script>
+<script type="text/javascript" src="./scripts/clipboard-polyfill.promise.min.js" ></script>
+<script type="text/javascript" src="./scripts/jquery-3.7.1.min.js" ></script>
+<script type="text/javascript" src="./scripts/jquery-migrate-1.4.1.min.js" ></script>
+<script type="text/javascript" src="./scripts/jquery-ui.min.js" ></script>
+<script type="text/javascript" src="./scripts/jquery.treeview.min.js" ></script>
+<script type="text/javascript" src="./scripts/jquery.livequery.min.js" ></script>
+<script type="text/javascript" src="./scripts/ovid.jspack.min.js" ></script>
+<script type="text/javascript" src="./scripts/marked.min.js" ></script>
+<script type="text/javascript" src="./scripts/fingerprint2.min.js" ></script>
+<script type="text/javascript">$().ready( function() { general_ready() } );</script>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.loading {
+    background-image: url(../gifs/loading.gif);
+    background-repeat: no-repeat;
+    background-position: 4px center;
+    cursor: progress;
+}
+
+body, td, th, table caption {
+    font-size: 0.75em;
+    line-height: 1.5em;
+    font-family: "Trebuchet MS", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+body {
+	background-color: rgb(255,255,255);
+	color: rgb(10,9,5);
+	margin: 0 55px 0 0;
+	padding: 10px 0px 20px 40px;
+}
+
+/* standard button with silver gradient */
+.standard-button {
+    background: rgb(255,255,255) url(../gifs/bg-button.gif) repeat-x;
+    color: rgb(10,9,5);
+    padding: 2px 8px;
+    border-right: 1px solid #666;
+    border-bottom: 1px solid #666;
+    border-top: 1px solid #EEE;
+    border-left: 1px solid #EEE;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .85em;
+    font-family: "Trebuchet MS", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+* html .standard-button {
+    font-size: .95em;
+}
+
+.standard-button[disabled] {
+    color: rgb(185,185,185);
+}
+
+a.standard-button {
+}
+
+/* These are all the same because all links point to ovidweb.cgi, 
+   so they always appear to be visited.
+*/
+a, a:visited, a:active {
+	color: rgb(7,104,169);
+}
+
+a:hover {
+	color: rgb(238,1,76);
+}
+
+#whatsnew {
+    display: none;
+	padding: 0 8px 10px 0;
+	text-align: right;
+	font-size: 92%;
+}
+
+.ftup {
+	padding: 0 0 0 3px;
+}
+
+.QA {
+	margin-bottom: 12pt;
+}
+
+.QS .P {
+	font-weight: bold;
+}
+
+.A .P {
+	margin-left: 3em;
+}
+
+.CA-fmt div {
+	display: none;
+	margin-left: 3em;
+}
+
+.CA-fmt div div {
+	display: block;
+}
+
+.CA-fmt div span {
+	display: inline;
+}
+
+.CA-unfmt div {
+	display: none;
+	margin-left: 3em;
+}
+
+.CA-unfmt div div {
+	display: block;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.CA-unfmt div span {
+	display: inline;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.UPDATE {
+	color: rgb(66,41,6);
+	font-size: 83%;
+	font-weight: normal;
+	letter-spacing: 0.08em;
+    padding: 4px 18px 1px 0;
+}
+
+.UPDATE img {
+    position: relative;
+    left: -5px;
+}
+
+.updated {
+	background-color: rgb(255,255,255);
+	border-left: 5px solid rgb(185,185,185);
+	border-top: 1px solid rgb(185,185,185);
+	border-bottom: 1px solid rgb(185,185,185);
+	border-right: 1px solid rgb(185,185,185);
+    padding-left: 10px;
+    padding-right: 4px;
+}
+
+.updated:hover {
+    border-left: 5px solid rgb(237,232,221);
+    border-top: 1px solid rgb(237,232,221);
+    border-bottom: 1px solid rgb(237,232,221);
+    border-right: 1px solid rgb(237,232,221);
+}
+
+td, th {
+	color: rgb(10,9,5);
+	font-weight: normal;
+	padding: 10px;
+}
+
+th {
+    font-weight: bold;
+	text-align: center;
+}
+
+table {
+	border:0;
+}
+
+.P {
+	font-weight: normal;
+	font-style: normal;
+	padding-bottom: 10px;
+}
+
+.TG {
+	margin-bottom: 10px;
+}
+
+.TG .TI {
+	font-size: 150%;
+	font-weight: bold;
+}
+
+.TI {
+    font-weight: bold;
+    text-align: center;
+    font-size: 150%;
+    padding-top: 1em;
+}
+
+.list_title {
+	font-weight: bold;
+}
+
+.EDTN {
+	font-size: 133%;
+	margin-top: 6px;
+	padding-bottom: 20px;
+}
+
+.PN, .GP {
+	font-weight: bold;
+	margin: 5px 0 0 0;
+	padding: 0;
+}
+
+.SG {
+	text-align: right;
+	margin-top: -1em;
+	margin-bottom: 2em;
+}
+
+.SG .PN, .SG .GP {
+	font-weight: normal;
+}
+
+.ROLE {
+	margin: 0;
+	padding: 0;
+}
+
+.AF .P, .BT .P {
+	font-style: italic;
+}
+
+.EDGRP, .AUTHGRP {
+	padding-bottom: 15px;
+}
+
+.AUTHORS .PRIMA .HD, .EDITORS .PRIMARY .HD, .AUTHORS .SECONDA .HD {
+	font-size: 150%;
+	font-style: italic;
+	padding-bottom: 15px;
+}
+
+.AUTHORS .HD, .EDITORS .HD {
+	font-size: 150%;
+	padding-bottom: 15px;
+}
+
+.TLV1-noHD {
+    padding-top: 15px;
+}
+
+.TLV1 .HD, .TLV2 .HD, .TLV3 .HD, .TLV4 .HD, .TLV5 .HD, .TLV6 .HD, .TLV7 .HD, .TLV8 .HD, .EDS .HD, .ED .HD {
+	font-weight: bold;
+	padding: 15px 0 5px 0;
+	margin: 0;
+}
+
+.TLV1 .HD, .EDS .HD, .ED .HD {
+	font-size: 150%;
+	font-style: normal;
+}
+
+.TLV2 .HD {
+	font-size: 150%;
+	font-style: italic;
+}
+
+.TLV3 .HD {
+	font-size: 140%;
+	font-style: normal;
+}
+
+.TLV4 .HD {
+	font-size: 140%;
+	font-style: italic;
+}
+
+.TLV5 .HD {
+	font-size: 130%;
+	font-style: normal;
+}
+
+.TLV6 .HD {
+	font-size: 130%;
+	font-style: italic;
+}
+
+.TLV7 .HD {
+	font-size: 120%;
+	font-style: normal;
+}
+
+.TLV8 .HD {
+	font-size: 120%;
+	font-style: italic;
+}
+
+.LK {
+	font-style: normal;
+}
+
+.GLOSEC .HD {
+	font-size: 150%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+
+.GLOSEC .TERM, .ABRSEC {
+	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 0;
+}
+
+.GLOSEC .DEF .P {
+	font-weight: normal;
+	padding: 0;
+}
+
+.ED {
+	margin-bottom: 20px;
+}
+
+
+.EDS .RF {
+	font-weight: normal;
+    padding: 15px;
+    border-bottom: 1px dotted rgb(185,185,185);
+}
+
+.FRF {
+	display: inline;
+}
+
+.slink, .dispset, .citedref {
+    text-align: right;
+	height: 18px;
+}
+
+.dispset {
+	display: inline;
+	padding: 0 5px 0 5px;
+}
+
+.dispset a {
+	color: rgb(7,104,169);
+	text-decoration: none;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.dispset a:hover {
+	text-decoration: underline;
+}
+
+.FRTXT .P {
+	font-weight: normal;
+	font-style: normal;
+}
+
+.THD .HNUM {
+	font-size: 183%;
+	line-height: normal;
+	padding-top: 10px;
+}
+
+.THD .HD, .FRTXT .FRTITLE {
+	font-size: 183%;
+	line-height: normal;
+	padding-top: 10px;
+	font-weight: bold;
+	padding-bottom: 25px;
+}
+
+.DIVISIONA, .DIVISIONB, .DIVISIONC, .DIVISIOND, {
+	margin-top: 20px;
+}
+
+
+.FG, .TB{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.XTAB {
+	width: 90%;
+	padding-top: 10px;
+}
+
+.XTAB HR {
+	color: rgb(185,185,185);
+	display: none;
+	height: 2px;
+}
+
+.XTAB table {
+	border-collapse: collapse;
+}
+
+.XTAB table td {
+	border: solid 1px rgb(185,185,185);
+	margin: 0px;
+	padding: 6px;
+}
+
+.FIGURE {
+	border: 2px groove rgb(236,234,244);
+}
+
+.FIGURE td {
+	padding: 15px;
+	border: 1px solid rgb(255,255,255);
+	font-size: 1em;
+}
+
+.FIGURE-COL1 {
+	font-size: 83%;
+	background-color: rgb(255,255,255);
+	height: 250px;
+}
+
+.FIGURE-COL2 {
+	background-color: rgb(255,255,255);
+}
+
+.FIGURE-COL2 .P {
+}
+
+img {
+	border: 0;
+}
+
+.QT {
+	margin: 1em 5em 1em 5em;
+}
+
+.QRF {
+}
+
+.STN {
+	margin: 1em 0 1em 3em;
+	width: 60%;
+}
+
+.STL {
+	display: block;
+	margin-bottom: 0.5em;
+	font-size: 115%;
+}
+
+.STRF {
+	display: block;
+	margin-top: 1em;
+	text-align: right;
+}
+
+.emph_B {
+	font-weight: bold;
+}
+
+.emph_I {
+	font-style: italic;
+}
+
+.emph_BIT {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.emph_UL {
+	text-decoration: underline;
+}
+
+.emph_DUL {
+	border-bottom: 3px double black;
+}
+
+.emph_BUL {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.emph_UPDATE {
+	background-color: rgb(237,232,221);
+}
+
+ul, ol {
+    padding: 4px 0 3px 20px;
+}
+
+li {
+	list-style-position: outside;
+}
+
+li .P {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+
+.listtype_A {
+	list-style-type: circle;	/* Asterisk */
+}
+
+.listtype_B {
+	list-style-type: disc;		/* Bullet */
+}
+
+.listtype_D {
+	list-style-type: square;	/* Dash */
+}
+
+.listtype_N {
+	list-style-type: decimal;
+}
+
+.listtype_L {
+	list-style-type: lower-alpha;
+}
+
+.listtype_UC {
+	list-style-type: upper-alpha;
+}
+
+.listtype_LCR {
+	list-style-type: lower-roman;
+}
+
+.listtype_R {
+	list-style-type: upper-roman;
+}
+
+.listtype_U {
+	list-style-type: none;		/* Unnumbered */
+}
+
+.listtype_SS {
+	list-style-type: disc;		/* Search Strategies */
+}
+
+
+
+.IDXSEC {
+}
+
+.IDXSEC .HD {
+	font-size: 150%;
+	padding-top: 10px;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+/* ENTRY1 is not indented */
+
+/* each ENTRY is indented relative to its parent */
+.IDXSEC .ENTRY2, .IDXSEC .ENTRY3, .IDXSEC .ENTRY4, .IDXSEC .ENTRY5, .IDXSEC .ENTRY6 {
+	padding-left: 15px;
+}
+
+.ABRSEC .HD {
+	font-size: 150%;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.CORRECT .TLV1 .HD {
+	border-top: solid 1px rgb(185,185,185);
+	font-size: 133%;
+	font-weight: bold;
+	font-style: normal;
+	margin-top: 20px;
+	padding-top: 10px;
+	padding-bottom: 15px;
+}
+
+.TCP, .TCP .DA, .TCP .ISBN, .TCP .ISN, .TCP .LC, .TCP .P {
+	padding-bottom: 10px;
+}
+
+.HASTIP {
+    border-bottom: 3px double rgb(110,187,31);
+    color: #494;
+    cursor: pointer;
+}
+
+.HASDEF {
+    border-bottom: 3px double rgb(7,104,169);
+    color: #449;
+    cursor: pointer;
+}
+
+.postit {
+    position: absolute;
+    font-size: 80%;
+    z-index: 1000;
+}
+.postit_header {
+    text-align: right;
+}
+.postit_body {
+    background-color: rgb(245,245,11);
+    padding: 0 1em 1em 1em;
+}
+.postit button {
+    padding: 0;
+    font-size: 80%;
+    font-weight: bold;
+    font-family: fixed;
+    background-color: rgb(245,245,11);
+}
+.postit_content {
+    background-color: rgb(245,245,11);
+    padding: 8px;
+    width: 15em;
+    min-height: 5em;
+    border: 1px solid rgb(185,185,185);
+}
+.postit .TERM {
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+.postit .DEF {
+    background-color: rgb(245,245,11);
+	font-weight: normal;
+    border: 0;
+	padding: 0;
+}
+
+.tbf_menu {
+	text-align: right;
+	border-bottom:solid 1px rgb(185,185,185);
+}
+
+.tbf_menu table {
+	width: 100%;
+}
+
+.tbf_menu table td {
+	color: rgb(117,117,117);
+}
+
+.tbf_menu table td a {
+	font-size: 130%;
+	margin: 0 0 0 0;
+}
+
+.pagenum {
+	margin-right: -55px;
+	border-top: 1px dotted rgb(185,185,185);
+	clear: all;
+}
+
+.pagenum div {
+	float: right;
+	color: rgb(117,117,117);
+	margin-left: 5px;
+	width: 50px;
+}
+
+.SIDEBAR {
+	font-weight: normal;
+	margin: 0 0 10px 0;
+}
+
+.SIDEBAR .HD {
+	color: rgb(10,9,5);
+	font-size: 108%;
+	font-style: normal;
+	font-weight: bold;
+	margin: 0;
+	padding: 0 0 3px 0;
+}
+
+.SIDEBAR .TLV1 {
+	font-weight: normal;
+	padding: 12;
+}
+
+.SIDEBAR .TLV1 B, .SIDEBAR .TLV1 .P {
+	font-weight: normal;
+	padding: 0 0 5px 0;
+}
+
+.SIDEBAR .TLV1 B {
+	font-weight: bold;
+}
+
+/* Sidebar Style 0 - Generic sidebars */
+
+.ABSTRACT {
+}
+
+/* Sidebar Style 1 */
+
+.REC,
+.ACTIONS,
+.USE,
+.ETHICS,
+.LEGAL,
+.EQUIPMENT,
+.GERIATRIC,
+.INDICATIONS,
+.INTERVENTIONS,
+.MATERNAL,
+.NURSING,
+.NURDOC,
+.PATHOPHYS,
+.PROCEDURE,
+.EDUCATION,
+.PEDIATRIC,
+.PREVENTION,
+.TROUBLE {
+	background: #EEE9F3;
+	border: solid 1px #C2AFD5;
+	color: rgb(10,9,5);
+    font-family: verdana,arial,helvetica,sans-serif;
+	font-size: 108%;
+	font-weight: normal;
+}
+
+/* Sidebar Style 2 */
+
+.DRUGS,
+.ASSOC,
+.BIO,
+.CAREER,
+.CULTURE {
+	background: #EAF3EC;
+	border: solid 1px #7CB58E;
+	color: rgb(10,9,5);
+    font-family: verdana,arial,helvetica,sans-serif;
+	font-size: 108%;
+	font-weight: normal;
+}
+
+/* Sidebar Style 3 */
+
+.INTERACT,
+.COLLABORATION,
+.GENDER,
+.EMERGENCY,
+.GERONALRT,
+.IMPLEMENTATION,
+.OUTCOMES,
+.PEDIATALRT,
+.PREGALRT,
+.SPECCONSALRT,
+.ALERT,
+.COMPLICATIONS,
+.TREATMENT {
+	background: #F9F1F1;
+	border: solid 1px #D13030;
+	color: rgb(10,9,5);
+    font-family: verdana,arial,helvetica,sans-serif;
+	font-size: 108%;
+}
+
+/* Sidebar Style 4 */
+
+.MONITOR,
+.STANDARDS,
+.SYMPTOM,
+.ADVPRAC,
+.APPROACH,
+.CASE,
+.GENETIC,
+.INDICATIONS {
+	background: #EDF3F7;
+	border: solid 1px #97B5C8;
+	color: rgb(10,9,5);
+    font-family: verdana,arial,helvetica,sans-serif;
+	font-size: 108%;
+}
+
+/* Sidebar Style 5 */
+
+.IMPLICATIONS,
+.CONCLUSIONS,
+.AWARE,
+.DEF,
+.QUICK,
+.ABBR,
+.CHECK,
+.CUTEDGE,
+.DIAGNOSIS,
+.CRITTHINK,
+.FUTURE,
+.ISSUES,
+.KEY,
+.MISC,
+.NOTES,
+.QUESTIONS,
+.READINGS,
+.TIPS {
+	background: #EAEAEA;
+	border: solid 1px #A9A9A9;
+	color: rgb(10,9,5);
+    font-family: verdana,arial,helvetica,sans-serif;
+	font-size: 108%;
+}
+
+.IDXPG {
+	display: inline;
+	padding: 0 5px 0 0;
+}
+
+.IDXPG span {
+}
+
+.MATH {
+	text-align: center;
+}
+
+.gatewayContentHighlight {
+	background-color: rgb(245,245,11);
+	border-right: 5px solid rgb(245,245,11);
+	padding-right: 5px;
+}
+
+.auxcontent {
+	display: block;
+}
+
+* html object.mov {
+    display: none;
+}
+* html object.mov/**/ {
+    display: inline;
+}
+* html object.mov {
+    display/**/: none;
+}
+
+pre {
+	border-top: 1px solid rgb(185,185,185);
+	font-family: fixed-width;
+	white-space: pre;
+}
+pre:first-line {
+	font-weight: bold;
+}
+
+sup, sub {
+    font-size: 80%;
+}
+
+.HD sup, .HD sub {
+    font-size: 60%;
+}
+
+.bibrecord-highlight-user {
+    color: rgb(238,1,76);
+    font-weight: bold;
+}
+
+.bibrecord-highlight-related {
+     color: rgb(0,153,0);
+ }
+
+.prntsec {
+    position: relative;
+    top: -1px;
+}
+
+.printable_section {
+    border: 1px dotted rgb(66,41,6);
+    background-color: rgb(255,209,0);
+}
+
+#printpreview_header {
+    padding: 5px;
+    border-bottom: 1px solid rgb(71,71,71);
+    background-color: rgb(255,255,255);
+}
+
+#printheader_source {
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+#printheader_copyright {
+    margin-top: 0.5em;
+    font-weight: normal;
+}
+
+#printheader_title {
+    font-style: italic;
+}
+
+#printheader_crumbtrail {
+    font-size: 85%;
+}
+
+.printheader_label {
+    font-style: normal;
+    color: rgb(0,80,76);
+    margin-right: 0.5em;
+}
+
+.printpreview-icon {
+    display: none;
+}
+
+
+</style>
+<meta name="viewport" content="width=900,initial-scale=0"/>
+<meta name="ROBOTS" content="NOFOLLOW,NOARCHIVE" />
+<meta name="Ovid_CompleteVersionNumber" content="OvidUI_05.17.02.001" />
+<meta name="Ovid_BuildID" content="001" />
+<meta name="Ovid_SourceBranch" content="release/OvidUI_05.17.02" />
+<meta name="Ovid_DateTimeGMT" content="2026-01-30@17:22:49" />
+<meta name="Ovid_SourceID" content="7e62909c65a978ed83c09b10c4aae34cfc2e8be7" />
+<meta name="Ovid_SessionInterface" content="OvidSP" />
+<link id="ovidwsurl" rel="service" class="preferred" type="application/x-ovid-ovidws" href="https://ovidsp.dc1.ovid.com/ovidws" />
+<meta name="OvidWS_Session_Cookie" content="10bdcc2d-12b3-43bc-aa86-2d2590ab6694|main" />
+<meta name="MyProjectsEnabled" content="YES" />
+<meta name="MyProjectsActive" content="NO" />
+<meta name="MyProjectsAllowUploads" content="NO" />
+<meta name="MyProjectsForbiddenTypes" content=".dll,.exe,.zip" />
+<link id="base_ui_callback_url" rel="baseurl" href="ovidweb.cgi?&S=10bdcc2d-12b3-43bc-aa86-2d2590ab6694%7cmain">
+<meta name="session" content="10bdcc2d-12b3-43bc-aa86-2d2590ab6694|main" />
+<meta name="heartbeat-interval" content="900000" />
+</head>
+<body >
+
+<style>
+.modal-wrapper {
+  background: rgba(0,0,0,.54);
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  color: black;
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-wrapper .modal-container {
+  height: 200px;
+  max-width: 300px;
+  width: 300px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+</style>
+<div class="modal-wrapper" id="restore_session-processing">
+    <div class="modal-container">
+        <span class="wk-loading-circular-icon wk-icon-filled-spinner-alt wk-spin"></span>
+        <span class="wk-loading-circular-label">Restoring session...</span>
+    </div>
+</div>
+<a id="skipto" href="#below-banner" role="button" tabindex="0">Skip to Content</a> <div id="analytics-data">    <input type="hidden" id="from-redirect" value="false" />    <input type="hidden" id="encrypted-session-id-input-present" value="true" />    <input type="hidden" id="logged-in-during-jumpstart" value="true" /></div>
+<script>
+ dataLayer.push({'page-name': ''});
+ dataLayer.push({'domain-name': document.location.host});
+ dataLayer.push({'dest-url': document.location.href});
+ dataLayer.push({'dest-query': document.location.search});
+ dataLayer.push({'previous-url': document.referrer});
+ dataLayer.push({'business-unit': 'Health'});
+ dataLayer.push({'page-content-type': 'ALL'});
+ dataLayer.push({'language': 'en'});
+ dataLayer.push({'division': 'HLRP'});
+ dataLayer.push({'site': 'OvidSP'});
+ dataLayer.push({'auth-type': 'Authenticated by IP-Ovid'});
+ dataLayer.push({'userId': 'glasggla'});
+ dataLayer.push({'ip': '130.209.34.166'});
+ dataLayer.push({'sessionId': '10bdcc2d-12b3-43bc-aa86-2d2590ab6694|main'});
+ dataLayer.push({'group-id': '2488400'});
+ dataLayer.push({'user-content-type': ''});
+ dataLayer.push({'data-center': 'DUBLIN'});
+</script>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NF86TTP8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">
+function hide_scrollbar() {
+	var e = document.body;
+	e.style.scrollbarBaseColor = '#fff';
+	e.style.scrollbarArrowColor = '#fff';
+	e.style.scrollbarDarkShadowColor = '#fff';
+	e.style.scrollbarShadowColor = '#fff';
+}
+
+function show_scrollbar() {
+    var e = document.body;
+    e.style.scrollbarBaseColor = '#ccc';
+    e.style.scrollbarArrowColor = '#000';
+    e.style.scrollbarDarkShadowColor = '#000';
+    e.style.scrollbarShadowColor = '#666';
+}
+    
+function toggle_CA(e) {
+	var src;
+	src = window.parent.getSrc(e);
+	if (src.nextSibling.style.display == 'block') {
+		src.nextSibling.style.display='none'; 
+		src.innerHTML='View Answer'; 
+	} else { 
+		src.nextSibling.style.display='block'; 
+		src.innerHTML='Hide Answer'; 
+	}
+}
+    
+function resolve_link(e,setid,locator,dbid,toan) {
+    e.href = "ovidweb.cgi?S=10bdcc2d-12b3-43bc-aa86-2d2590ab6694|main;FTS+Link+Set+Ref="
+              + setid + "|" + locator + "|" + dbid + "|" + toan;
+    return true;
+}
+    </script><div class="CHAPTER" id="B02272760-DA1-C4" id_xpath="/CHAPTER[1]" V="2006.2" REPLACE="NO">
+<div class="CHSO">
+<div class="THD">
+<div class="HNUM">Chapter 4</div>
+<div class="HD">Planning the Measurements: Precision, Accuracy, and Validity</div>
+</div>
+<div class="BY">
+<div class="PN">Steven R. Cummings</div>
+<div class="PN">Thomas B. Newman</div>
+<div class="PN">Alison J. Huang</div>
+</div>
+</div>
+<div class="TBD">
+<div class="TLV1 TLV1-noHD " id="B02272760.0-92" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[1]">
+<div class="P">Measurements describe phenomena in terms that can be analyzed statistically, and the validity of a study depends on how well the variables designed for&#8212;and measured in&#8212;the study represent the phenomena of interest (<span class="LK">Figure 4.1</span>), for example, how well does parental recall of birth weight measure actual birth weight? (<span class="LK">1</span>) These concepts are important for all types of measurements, including physical examinations, laboratory tests, and scores from questionnaires.</div>
+<div class="P">This chapter begins by considering how the choice of measurement <span class="emph_B">scale</span> influences the information content of the measurement. We then turn to the central goal of maximizing test <span class="emph_B">accuracy</span> by designing measurements that are relatively <span class="emph_B">precise</span> (free of random error) and <span class="emph_B">unbiased</span> (free of systematic error), thereby enhancing the appropriateness of drawing inferences from these measurements to the phenomena of interest. We address the concept of <span class="emph_B">validity</span>, a qualitative relative of accuracy, before concluding with some considerations for clinical and translational research, noting especially the advantages of storing specimens for later measurements.</div>
+<div class="P">The topics discussed in this chapter apply to the study&#8217;s predictor and outcome variables, as well as to the study&#8217;s <span class="emph_B">covariates</span>, the remaining set of measured variables. The measurement methods for some covariates will not require detailed planning, because many can be borrowed from previous research. But the investigator will almost always need to give special attention to the study&#8217;s main predictor(s) and outcome(s)&#8212;and possibly a few others&#8212;tailoring their measurements to the specific needs of the study.</div>
+<div class="FG" id="F1-4" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[1]/FG[1]"><table class="FIGURE" cellpadding="0" cellspacing="0"><tr><td valign="top" class="FIGURE-COL2"><div class="P"/><div class="P">&#9642; <span class="emph_B">FIGURE 4.1</span> This chapter focuses on the items within the red box: designing measurements that represent the phenomena of interest for the research question.</div></td></tr></table></div>
+</div>
+<a name="PG40"> </a><div class="pagenum"><div>P.40</div></div><br clear="all"/>
+<div class="TLV1" id="B02272760.0-93" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[2]">
+<div class="HD">&#9642; MEASUREMENT SCALES</div>
+<div class="P"><span class="LK">Table 4.1</span> presents a simplified classification of measurement scales and the information they contain. The classification is important because some types of variables are more informative than others, adding power or reducing sample size requirements, and revealing more detailed distribution patterns.</div>
+<div class="TLV2" id="B02272760.0-94" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[2]/TLV2[1]">
+<div class="HD">Categorical Variables: Dichotomous, Nominal, and Ordinal</div>
+<div class="P">Phenomena that are not suitable for quantification are measured by classifying them in categories. <span class="emph_B">Categorical variables</span> with two possible values (eg, dead or alive) are termed <span class="emph_B">dichotomous</span>. Categorical variables with more than two categories (<span class="emph_B">polychotomous</span>) can be further characterized according to the type of information they contain. Among these, <span class="emph_B">nominal variables</span> have categories that are not ordered; type A blood, for example, is neither more nor less than type B blood. Nominal variables tend to have an absolute qualitative character that makes them straightforward to measure. In contrast, <span class="emph_B">ordinal variables</span> do have an order, such as severe, moderate, and mild pain. The additional information is an advantage over nominal variables, but because ordinal variables do not specify a numerical or uniform difference or ratio of one category to the next, the information content is less than that of numerical variables.</div>
+</div>
+<div class="TLV2" id="B02272760.0-95" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[2]/TLV2[2]">
+<div class="HD">Numerical Variables: Continuous and Discrete</div>
+<div class="P"><span class="emph_B">Numerical variables</span> can be quantified with a number that expresses how much or how many. A <span class="emph_B">continuous variable</span>, such as the blood hemoglobin level, quantifies how much on a scale that has a theoretically infinite number of values, although the method used to measure it will likely generate only some of those values. In contrast, a <span class="emph_B">discrete variable</span> has a countable number of
+<a name="PG41"> </a><div class="pagenum"><div>P.41</div></div><br clear="all"/>
+values usually expressed as a positive or negative integer, such as the change in the number of people living in a household during a pandemic. Discrete variables that are well distributed over many possible values, say, six or more, can resemble continuous variables in statistical analyses and be equivalent for the purpose of designing measurements.</div>
+<div class="TB" id="T1-4" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[2]/TLV2[2]/TB[1]" T="OVID"><table class="FIGURE" cellpadding="0" cellspacing="0"><tr><th valign="top" class="FIGURE-COL2"><div class="TI"><span class="emph_B">TABLE 4.1 MEASUREMENT SCALES</span></div></th></tr><tr><td valign="top" class="FIGURE-COL1"><table cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" rowspan="1" colspan="1"><p><b>TYPE OF MEASUREMENT</b></p></td>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" rowspan="1" colspan="1"><p><b>CHARACTERISTICS OF VARIABLE</b></p></td>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" rowspan="1" colspan="1"><p><b>EXAMPLE</b></p></td>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" rowspan="1" colspan="1"><p><b>DESCRIPTIVE STATISTICS</b></p></td>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" rowspan="1" colspan="1"><p><b>STATISTICAL POWER</b></p></td>
+</tr>
+<tr>
+<td align="center" valign="bottom" style="border-bottom: 1px solid black;" colspan="5" rowspan="1"><p><b><i>Categorical</i></b></p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Dichotomous</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Two categories</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Vital status (alive or dead)</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Counts, proportions</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Low</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Nominal</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Unordered categories</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Gender identity; blood type</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Same as above</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Low</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Ordinal</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Ordered categories with intervals that are not quantifiable</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Degree of pain (none, mild, moderate, severe); social class</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>In addition to the above: medians</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Intermediate</p></td>
+</tr>
+<tr>
+<td align="center" valign="top" style="border-bottom: 1px solid black;" colspan="5" rowspan="1"><p><b><i>Numeric</i></b></p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Continuous</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Infinite number of values</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Weight; hemoglobin level</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>In addition to the above: means, standard deviations</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>High</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Discrete or count<sup><span class="a">a</span></sup></p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Limited number of values (typically integers)</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Number of pregnancies; number of sexual partners</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Same as ordinal when there are few possible values; same as continuous when there are many</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>High if the variable takes on many possible values, especially if the average is near the middle</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" colspan="5" rowspan="1"><p><sup><a name="N1-T1-C4" shape="rect" target="_blank">a </a></sup>Count variables are discrete variables that can only be whole numbers (0, 1, 2, 3, &#8230;).</p></td>
+</tr>
+</table></td></tr></table></div>
+</div>
+<div class="TLV2" id="B02272760.0-96" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[2]/TLV2[3]">
+<div class="HD">Choosing a Measurement Scale</div>
+<div class="P">A good general rule is to prefer continuous over categorical variables when there is a choice, because the additional information they contain improves statistical efficiency. In a study comparing the antihypertensive effects of several treatments, for example, measuring blood pressure in millimeters of mercury allows the investigator to observe the magnitude of the change in every participant, whereas measuring it as hypertensive versus normotensive limits the assessment. The continuous variable contains more information, and the result is a study with more power and&#47;or a smaller sample size (<span class="LK">Chapters 5</span> and <span class="LK">6</span>).</div>
+<div class="P">Continuous variables also allow for more flexibility than categorical variables in fitting the data to the nature of the variable or the shape of the association, especially when the relationship might have a complex pattern. For example, a study of the association of body mass index (BMI) with mortality may be able to detect a U-shaped pattern, with higher mortality in those with low and high levels of BMI compared with intermediate levels (<span class="LK">2</span>) and may be able to describe threshold values where mortality begins to change. And a study of predictors of low-birth-weight babies should record actual birth weight rather than above or below the conventional 2500 g threshold for low birth weight; this leaves analytic options open, such as to change the cutoff that defines low birth weight, to develop an ordinal scale with several categories of birth weight (eg, &#60;1500, 1500 to 1999, 2000 to 2499, and &#8805;2500 g), or to use the continuous measurement.</div>
+<div class="P">Similarly, when there is the option of designing the number of response categories in an ordinal scale, as in a question about satisfaction with care, it is often useful to provide a half-dozen categories that range from &#8220;strongly agree&#8221; to &#8220;strongly disagree.&#8221; These results can later be collapsed into a dichotomy (agree and disagree), but the reverse would not be possible.</div>
+<div class="P">Many characteristics, such as pain or quality of life, are difficult to describe with categories or numbers, but quantifying them is essential to answering important research questions. This is illustrated by the Short Form (SF)-36, a standardized questionnaire for assessing quality of life that produces discrete numerical ratings of eight dimensions, including physical, social, and emotional function and general well-being (<span class="LK">3</span>). The process of classification and measurement, if done well, can increase the objectivity of our knowledge, reduce bias, and provide more detailed communication.</div>
+</div>
+</div>
+<div class="TLV1" id="B02272760.0-97" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[3]">
+<div class="HD">&#9642; PRECISION</div>
+<div class="P">The precision of a variable is the degree to which it is reproducible, with nearly the same value each time it is measured. A beam scale can measure body weight with great precision, whereas measuring balance by timing how long a participant keeps her feet together with eyes closed may produce values that vary from one observer or one occasion to another. Precision has a very important influence on the power of a study. The more precise a measurement, the greater the statistical power at a given sample size to test hypotheses about that measurement (<span class="LK">Chapter 5</span>).</div>
+<div class="P">Precision (also called <span class="emph_B">reproducibility</span>, <span class="emph_B">reliability</span>, and <span class="emph_B">consistency</span>) is a function of random error (chance variability); the greater the error, the less precise the measurement. There are three main sources of random error in making measurements.</div>
+<ul class="LS listtype_B">
+<li class="LM"><div class="P"><span class="emph_B">Observer variability</span> is due to the observer and includes such things as choice of words in an interview and skill in using a mechanical instrument.</div></li>
+<a name="PG42"> </a><div class="pagenum"><div>P.42</div></div><br clear="all"/>
+<li class="LM"><div class="P"><span class="emph_B">Instrument variability</span> is due to the instrument and includes changing environmental factors (eg, temperature), differences between batches of reagents, and so on.</div></li>
+<li class="LM"><div class="P"><span class="emph_B">Participant variability</span> is due to intrinsic variability in characteristics of study participants unrelated to variables under study that may influence the measurement, such as variability in measurements of strength, due to time of day, time since last food intake, or effort.</div></li>
+</ul>
+<div class="TLV2" id="B02272760.0-98" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[3]/TLV2[1]">
+<div class="HD">Assessing Precision</div>
+<div class="P">Precision is assessed as the reproducibility of repeated measurements, comparing measurements made either by the same person (within-observer reproducibility) or different people (between-observer reproducibility). It can also be assessed within or between instruments. The reproducibility of continuous variables is often expressed as either the within-participant <span class="emph_B">standard deviation</span> or the coefficient of variation (within-participant standard deviation divided by the <span class="emph_B">mean</span>).<span class="LK"><sup>1</sup></span> For categorical variables, percent agreement, the interclass correlation coefficient, and the <span class="emph_B">kappa</span> statistic are often used (<span class="LK">4</span>, <span class="LK">5</span>, <span class="LK">6</span>).</div>
+</div>
+<div class="TLV2" id="B02272760.0-99" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[3]/TLV2[2]">
+<div class="HD">Strategies for Enhancing Precision</div>
+<div class="P">There are five approaches to minimizing random error and increasing the precision of measurements (<span class="LK">Table 4.2</span>):</div>
+<ul class="LS listtype_N">
+<li class="LM"><div class="P"><span class="emph_B">Standardizing the measurement methods.</span> All study protocols should include detailed instructions for making the measurements. These may include written directions with pictures or a short video on how to prepare the environment and the participant, how to carry out and record the measurement, how to <span class="emph_B">calibrate</span> the instrument, and so forth (<span class="LK">Appendix 4A</span>). This set of materials, part of the <span class="emph_B">operations manual</span>, is essential for most studies. Even when there is only a single observer, specific written guidelines for making each measurement will help ensure that her performance is uniform over the duration of the study and serve as the basis for describing the methods when the results are published.</div></li>
+<li class="LM"><div class="P"><span class="emph_B">Training and certifying the observers.</span> Training will improve the consistency of measurement techniques, especially when several observers are involved. It is often desirable to test mastery of the techniques specified in the operations manual and to certify that observers have achieved the prescribed level of performance (<span class="LK">Chapter 18</span>). When multiple observers make measurements for a study (eg, determining whether a physical finding is present or whether a death was caused by breast cancer), it is helpful to measure and take steps to optimize their interrater reliability (eg, using Kappa; see <span class="LK">Chapter 13</span>).</div></li>
+<li class="LM"><div class="P"><span class="emph_B">Refining the instruments.</span> Mechanical and electronic instruments can be engineered to reduce variability. Similarly, questionnaires and interviews should go through multiple iterations to increase clarity and avoid potential ambiguities (<span class="LK">Chapter 17</span>).</div></li>
+<li class="LM"><div class="P"><span class="emph_B">Automating the instruments.</span> Variations in the way human observers make measurements can be eliminated with automatic devices and self-response questionnaires.</div></li>
+<li class="LM"><div class="P"><span class="emph_B">Repetition.</span> The influence of random error from any source is reduced by repeating the measurement and using the mean of two or more readings. For example, taking the average of two measurements of leg strength will improve the precision of a measurement that is prone to variability in effort from test to test. Precision will be substantially increased by this strategy, the primary limitations being the added cost and practical difficulties of repeating the measurements as well as the possibility of systematic changes in the measurement with
+<a name="PG43"> </a><div class="pagenum"><div>P.43</div></div><br clear="all"/>
+repetition, for example, due to tiring on strength tests or improved test-taking for tests of cognitive ability.</div></li>
+</ul>
+<div class="TB" id="T2-4" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[3]/TLV2[2]/TB[1]" T="OVID"><table class="FIGURE" cellpadding="0" cellspacing="0"><tr><th valign="top" class="FIGURE-COL2"><div class="TI"><span class="emph_B">TABLE 4.2 STRATEGIES FOR REDUCING RANDOM ERROR, WITH ILLUSTRATIONS FROM A STUDY OF ANTIHYPERTENSIVE TREATMENT</span></div></th></tr><tr><td valign="top" class="FIGURE-COL1"><table cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" colspan="2" rowspan="1"><p><b>STRATEGY TO REDUCE RANDOM ERROR</b></p></td>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" rowspan="1" colspan="1"><p><b>SOURCE OF RANDOM ERROR</b></p></td>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" rowspan="1" colspan="1"><p><b>EXAMPLE OF RANDOM ERROR</b></p></td>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" rowspan="1" colspan="1"><p><b>EXAMPLE OF STRATEGY TO PREVENT THE ERROR</b></p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="2" colspan="1"><p>1.</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="2" colspan="1"><p>Standardizing the measurement methods in an operations manual</p></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>Observer</p></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>Variation in blood pressure (BP) measurement due to variable rate of cuff deflation (often too fast)</p></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>Specify that the cuff be deflated at 2 mm Hg&#47;s</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Participant</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Variation in BP due to variable length of quiet sitting before measurement</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Specify that participant sit in a quiet room for 5 minutes before BP measurement</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>2.</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Training and certifying the observer</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Observer</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Variation in BP due to variable observer technique</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Train observer in standard techniques</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>3.</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Refining the instrument</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Instrument and observer</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Variation in BP due to noisy manometer</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Purchase new high-quality manometer and periodically test accuracy</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="2" colspan="1"><p>4.</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="2" colspan="1"><p>Automating the instrument</p></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>Observer</p></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>Variation in BP due to variable observer technique</p></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>Use automatic BP measuring device</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Participant</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Variation in BP due to participant&#8217;s emotional reaction to observer</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Use automatic BP measuring device</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>5.</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Repeating the measurement</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Observer, participant, and instrument</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>All measurements and all sources of variation</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Use mean of two or more BP measurements</p></td>
+</tr>
+</table></td></tr></table></div>
+<div class="P">For each measurement in the study, the investigator must decide how vigorously to pursue each of these strategies. This decision can be based on the importance of the variable, the magnitude of the potential problem with precision, and the feasibility and cost of the strategy. In general, standardizing and training should always be used, and repetition is guaranteed to improve precision when it is feasible and affordable.</div>
+</div>
+</div>
+<div class="TLV1" id="B02272760.0-100" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[4]">
+<div class="HD">&#9642; ACCURACY</div>
+<div class="P">The accuracy of a variable is the degree to which it represents the true value. Accuracy depends on both maximizing precision and minimizing bias (<span class="LK">Table 4.3</span>). When serum bilirubin was measured using instruments that had been miscalibrated, for example, the results were precise but biased (<span class="LK">7</span>). This concept is further illustrated in <span class="LK">Figure 4.2</span>. Accuracy and precision do often go hand in hand and many of the strategies for increasing precision also improve accuracy.</div>
+<a name="PG44"> </a><div class="pagenum"><div>P.44</div></div><br clear="all"/>
+<div class="TB" id="T3-4" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[4]/TB[1]" T="OVID"><table class="FIGURE" cellpadding="0" cellspacing="0"><tr><th valign="top" class="FIGURE-COL2"><div class="TI"><span class="emph_B">TABLE 4.3 THE PRECISION AND ACCURACY OF MEASUREMENTS</span></div></th></tr><tr><td valign="top" class="FIGURE-COL1"><table cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" rowspan="1" colspan="1"><p/></td>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" colspan="2" rowspan="1"><p><b>PRECISION</b></p></td>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" colspan="2" rowspan="1"><p><b>ACCURACY</b></p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Definition</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" colspan="2" rowspan="1"><p>The degree to which a variable has nearly the same value when measured several times</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" colspan="2" rowspan="1"><p>The degree to which a variable approximates the true value</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Best way to assess</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" colspan="2" rowspan="1"><p>Comparison among repeated measures</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" colspan="2" rowspan="1"><p>Comparison with a &#8220;gold standard&#8221;</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Value to study</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" colspan="2" rowspan="1"><p>Increase power to detect effects</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" colspan="2" rowspan="1"><p>Increase validity of conclusions</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>Threatened by</p></td>
+<td align="left" valign="top" colspan="2" rowspan="1"><p>Random error (chance) contributed by</p></td>
+<td align="left" valign="top" colspan="2" rowspan="1"><p>Random and systematic error (bias) contributed by</p></td>
+</tr>
+<tr>
+<td align="left" valign="bottom" rowspan="1" colspan="1"><p/></td>
+<td align="left" valign="bottom" rowspan="1" colspan="1"><p/></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>The observer</p></td>
+<td align="left" valign="bottom" rowspan="1" colspan="1"><p/></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>The observer</p></td>
+</tr>
+<tr>
+<td align="left" valign="bottom" rowspan="1" colspan="1"><p/></td>
+<td align="left" valign="bottom" rowspan="1" colspan="1"><p/></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>The participant</p></td>
+<td align="left" valign="bottom" rowspan="1" colspan="1"><p/></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>The participant</p></td>
+</tr>
+<tr>
+<td align="left" valign="bottom" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p/></td>
+<td align="left" valign="bottom" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p/></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>The instrument</p></td>
+<td align="left" valign="bottom" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p/></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>The instrument</p></td>
+</tr>
+</table></td></tr></table></div>
+<div class="P">Unlike precision, accuracy is affected by <span class="emph_B">bias</span> (systematic error); the greater the error, the less accurate the variable. The three main classes of random error noted in the earlier section on precision each have corresponding biases here.</div>
+<ul class="LS listtype_B">
+<li class="LM"><div class="P"><span class="emph_B">Observer bias</span> is a distortion, conscious or unconscious, in the perception or reporting of the measurement by the observer. It may represent systematic errors in the way an instrument is operated, such as a tendency to round blood pressure measurements down to a nearest zero mm Hg or to use leading questions when interviewing a participant.</div></li>
+<li class="LM"><div class="P"><span class="emph_B">Instrument bias</span> can result from faulty function of a mechanical instrument. A scale that has not been calibrated recently may have drifted downward, producing consistently low body weights.</div></li>
+<li class="LM"><div class="P"><span class="emph_B">Participant bias</span> is a distortion of the measurement by the study participant, for example, in reporting an event; it is also called &#8220;respondent or recall bias.&#8221; Patients with breast cancer who believe that alcohol is a cause of their cancer, for example, may exaggerate the alcohol intake they report.</div></li>
+</ul>
+<div class="P">The accuracy of a measurement is best assessed by comparing it, when possible, to a &#8220;<span class="emph_B">gold standard</span>&#8221;&#8212;a reference measurement carried out by a technique that is believed to best represent the true value of the characteristic. What measurement to designate as the gold standard can be a difficult judgment, drawing on previous work in the field and a consensus of experts.</div>
+<div class="P">For measurements on a continuous scale, the degree of accuracy can be expressed as the mean difference between the measurement under investigation and the gold standard across study participants. For measurements on a dichotomous scale, accuracy in comparison with a gold standard can be described in terms of sensitivity and specificity (<span class="LK">Chapter 13</span>). For
+<a name="PG45"> </a><div class="pagenum"><div>P.45</div></div><br clear="all"/>
+measurements on categorical scales with more than two response options, the percent correct on each can be calculated.</div>
+<div class="FG" id="F2-4" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[4]/FG[1]"><table class="FIGURE" cellpadding="0" cellspacing="0"><tr><td valign="top" class="FIGURE-COL2"><div class="P"/><div class="P">&#9642; <span class="emph_B">FIGURE 4.2</span> The difference between imprecision and bias.</div></td></tr></table></div>
+<div class="TLV2" id="B02272760.0-101" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[4]/TLV2[1]">
+<div class="HD">Strategies for Enhancing Accuracy</div>
+<div class="P">The major approaches to increasing accuracy include the first four strategies listed earlier for precision, and three additional ones (<span class="LK">Table 4.4</span>):</div>
+<ul class="LS listtype_N">
+<li class="LM"><div class="P">Standardizing the measurement methods.</div></li>
+<li class="LM"><div class="P">Training and certifying the observers.</div>
+<div class="TB" id="T4-4" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[4]/TLV2[1]/LS[1]/LM[2]/TB[1]" T="OVID"><table class="FIGURE" cellpadding="0" cellspacing="0"><tr><th valign="top" class="FIGURE-COL2"><div class="TI"><span class="emph_B">TABLE 4.4 STRATEGIES FOR REDUCING SYSTEMATIC ERROR, WITH ILLUSTRATIONS FROM A STUDY OF ANTIHYPERTENSIVE TREATMENT</span></div></th></tr><tr><td valign="top" class="FIGURE-COL1"><table cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" colspan="2" rowspan="1"><p><b>STRATEGY TO REDUCE SYSTEMATIC ERROR</b></p></td>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" rowspan="1" colspan="1"><p><b>SOURCE OF SYSTEMATIC ERROR</b></p></td>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" rowspan="1" colspan="1"><p><b>EXAMPLE OF SYSTEMATIC ERROR</b></p></td>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" rowspan="1" colspan="1"><p><b>EXAMPLE OF STRATEGY TO PREVENT THE ERROR</b></p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="2" colspan="1"><p>1.</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="2" colspan="1"><p>Standardizing the measurement methods in an operations manual</p></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>Observer</p></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>Consistently high diastolic blood pressure (BP) readings due to using the point at which sounds become muffled</p></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>Specify the operational definition of diastolic BP as the point at which sounds cease to be heard</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Participant</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Consistently high readings due to measuring BP right after walking upstairs to clinic</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Specify that participant sit in quiet room for 5 min before measurement</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>2.</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Training and certifying the observer</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Observer</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Consistently high BP readings due to failure to follow procedures specified in operations manual</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Trainer checks accuracy of observer&#8217;s reading by repeating the measurement</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>3.</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Refining the instrument</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Instrument</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Consistently high BP with standard cuff in participants with very large arms</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Use extra-wide BP cuff in obese or very muscular patients</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="2" colspan="1"><p>4.</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="2" colspan="1"><p>Automating the instrument</p></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>Observer</p></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>Conscious or unconscious tendency for observer to read BP lower in group randomized to active drug</p></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>Use automatic BP measuring device</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Participant</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>BP increase due to proximity of attractive technician</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Use automatic BP measuring device</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>5.</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Making unobtrusive measurements</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Participant</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Tendency of participant to overestimate compliance with study drug</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Measure study drug level in urine</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>6.</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Calibrating the instrument</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Instrument</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Consistently high BP readings due to manometer being out of adjustment</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Calibrate every month</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="2" colspan="1"><p>7.</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="2" colspan="1"><p>Blinding</p></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>Observer</p></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>Conscious or unconscious tendency for observer to read BP lower in active treatment group</p></td>
+<td align="left" valign="top" rowspan="1" colspan="1"><p>Use double-blind placebo to conceal study group assignment</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Participant</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Tendency of participant who knew she was on active drug to overreport side effects</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Use double-blind placebo to conceal study group assignment</p></td>
+</tr>
+</table></td></tr></table></div></li>
+<a name="PG46"> </a><div class="pagenum"><div>P.46</div></div><br clear="all"/>
+<li class="LM"><div class="P">Refining the instruments.</div></li>
+<li class="LM"><div class="P">Automating the instruments.</div></li>
+<li class="LM"><div class="P"><span class="emph_B">Making unobtrusive measurements.</span> It is sometimes possible to design measurements that the participants are not aware of, thereby eliminating the possibility that they will consciously bias the variable. For example, an evaluation of the effect of placing a hand sanitizer and a hand hygiene poster in a hospital cafeteria utilized observers who blended in with cafeteria customers (<span class="LK">8</span>).</div></li>
+<li class="LM"><div class="P"><span class="emph_B">Calibrating the instrument.</span> The accuracy of many instruments, especially those that are mechanical or electrical, can be increased by periodic <span class="emph_B">calibration</span> with a gold standard.</div></li>
+<li class="LM"><div class="P"><span class="emph_B">Blinding.</span> This classic strategy does not improve the overall accuracy of the measurements, but it can eliminate differential bias that affects one study group more than another. In a double-blind clinical trial, if blinding is successful the participants and observers do not know whether active medicine or placebo has been assigned, and any inaccuracy in measuring the outcome will be the same in the two groups.</div></li>
+</ul>
+<div class="P">The decision on how vigorously to pursue each of these seven strategies for each measurement rests, as noted earlier for precision, on the judgment of the investigator. The considerations are the potential impact that the anticipated degree of inaccuracy will have on the conclusions of the study, and the feasibility and cost of the strategy. The first two strategies (standardizing and training) should always be used, calibration is needed for any instrument that has the potential to change over time, and blinding is essential whenever feasible.</div>
+</div>
+</div>
+<div class="TLV1" id="B02272760.0-102" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[5]">
+<div class="HD">&#9642; VALIDITY</div>
+<div class="P">Validity resembles accuracy, but we think of it as adding a qualitative dimension to considering how well a measurement represents the phenomena of interest. For example, blood levels of creatinine and cystatin C, two chemicals excreted by the kidneys, might be equally <span class="emph_I">accurate</span> (eg, within 1&#37; of the true level), but cystatin C may be more <span class="emph_I">valid</span> as a measure of kidney function because creatinine levels are also influenced by the amount of muscle (<span class="LK">9</span>).</div>
+<div class="P">Validity is often not amenable to assessment with a gold standard, particularly for measurements aimed at subjective and abstract phenomena such as pain or quality of life. Several constructs are used to address the validity of these measurement approaches.</div>
+<ul class="LS listtype_B">
+<li class="LM"><div class="P"><span class="emph_B">Content validity</span> examines how well the measurement represents all aspects of the phenomena under study. For example, the SF-36 questionnaire includes questions on social, physical, and emotional functioning, general health, mental health, and bodily pain to assess quality of life (<span class="LK">3</span>).</div></li>
+<li class="LM"><div class="P"><span class="emph_B">Face validity</span> describes whether the measurement seems inherently reasonable, such as assessing frailty by muscle weakness, feeling exhausted, weight loss, and slow usual walking speed (<span class="LK">10</span>).</div></li>
+<li class="LM"><div class="P"><span class="emph_B">Construct validity</span> is the degree to which a certain measurement matches what one would expect from theory; for example, a measurement of social isolation should be able to separate individuals who have few or no friendships and who do not participate in social activities from those who have many friends and participate in several social activities.</div></li>
+<li class="LM"><div class="P"><span class="emph_B">Predictive validity</span> is the ability of the measurement to predict an outcome; for example, how well the measurement of frailty predicts admission to long-term care.</div></li>
+<li class="LM"><div class="P"><span class="emph_B">Criterion-related validity</span> is the degree to which a new measurement, such as a new biochemical test of muscle mass, correlates with measurements of muscle strength.</div></li>
+</ul>
+<div class="P">The general approach to measuring subjective and abstract phenomena is to begin by searching the literature and consulting with experts in an effort to find a suitable instrument (typically a questionnaire) that has already been validated. Using such an instrument has the advantage of making the results of the new study comparable to earlier work in the area and may simplify and strengthen the process of applying for grants and publishing the results. Its disadvantages,
+<a name="PG47"> </a><div class="pagenum"><div>P.47</div></div><br clear="all"/>
+however, are that the validation process may have been suboptimal and that an instrument taken off the shelf may be outmoded or not optimal for the research question.</div>
+<div class="P">If existing instruments are not suitable for the needs of the study, then the investigator may decide to develop a new measurement approach and validate it herself. This can be an interesting challenge and even lead to a worthwhile contribution to the literature, but it generally requires a lot of time and effort. It is fair to say that the process is often less conclusive than the word &#8220;validation&#8221; connotes.</div>
+</div>
+<div class="TLV1" id="B02272760.0-103" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[6]">
+<div class="HD">&#9642; OTHER FEATURES OF MEASUREMENT APPROACHES</div>
+<div class="P">Measurements should be <span class="emph_B">sensitive</span><span class="LK"><sup>2</sup></span> enough to detect differences in a characteristic that are important to the investigator. Just how much sensitivity is needed depends on the research question. For example, for a trial of whether a treatment improves heart function, measuring the distance that a participant is able to walk in 6 minutes is likely to be more sensitive to change in cardiac performance than a self-reported rating of shortness of breath after walking one block.</div>
+<div class="P">An ideal measurement is <span class="emph_B">specific</span>, representing only the characteristic of interest. For example, an echocardiographic measurement of the contractile function of the heart would be more specific to the effect of a treatment on heart failure than the 6-minute walking distance, which is also influenced by lung function and the fatigability of leg muscles.</div>
+<div class="P">Measurements should be appropriate to the objectives of the study. A study of stress as an antecedent to myocardial infarction, for example, would need to consider what kind of stress (psychological or physical, acute or chronic) was of interest before setting out the operational definitions for measuring it.</div>
+<div class="P">Measurements should provide an <span class="emph_B">adequate distribution of responses</span> in the study sample. A measure of functional status is most useful if it produces values that range from high in some participants to low in others. A major reason for pretesting is to ensure that the actual responses do not all cluster around one end of the possible range of responses, also described as &#8220;floor and ceiling effects.&#8221;</div>
+<div class="P">Whenever possible, measurements should be designed in a way that minimizes subjective judgments. <span class="emph_B">Objectivity</span> is achieved by reducing the involvement of the observer and the participant and by using automated instruments. One danger in these strategies, however, is the consequent tunnel vision that limits the scope of the observations and the ability to discover unanticipated phenomena. This can be addressed by including some <span class="emph_B">open-ended questions</span>, and an opportunity for acquiring subjective and qualitative data, in addition to the quantitative measurements.</div>
+<div class="P">In designing a study, there is a tendency to keep adding items that are not central to the research question but that could be of interest. It is true that additional measurements enable investigators to use the data to answer additional questions. However, it is important to keep in mind the value of <span class="emph_B">efficiency</span> and <span class="emph_B">parsimony</span>. The full set of measurements should be designed to collect useful data at an affordable cost in time and money with acceptable burden on participants. Collecting too much information is a common error that can tire participants, overwhelm the team making the measurements, and clutter data management and analysis. The result may be a more expensive study that is paradoxically less successful in answering the main research questions.</div>
+</div>
+<div class="TLV1" id="B02272760.0-104" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[7]">
+<div class="HD">&#9642; MEASUREMENTS ON STORED MATERIALS</div>
+<div class="P">Some measurements can be made only during contact with the study participants, but many can be carried out later on biologic specimens banked for chemical, genetic, or other analyses or on images from radiographic and other procedures filed electronically (<span class="LK">Table 4.5</span>).</div>
+<a name="PG48"> </a><div class="pagenum"><div>P.48</div></div><br clear="all"/>
+<div class="TB" id="T5-4" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[7]/TB[1]" T="OVID"><table class="FIGURE" cellpadding="0" cellspacing="0"><tr><th valign="top" class="FIGURE-COL2"><div class="TI"><span class="emph_B">TABLE 4.5 EXAMPLES OF MEASUREMENTS THAT CAN BE MADE ON STORED MATERIALS</span></div></th></tr><tr><td valign="top" class="FIGURE-COL1"><table cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" rowspan="1" colspan="1"><p><b>TYPE OF MEASUREMENT</b></p></td>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" rowspan="1" colspan="1"><p><b>EXAMPLES</b></p></td>
+<td align="left" valign="bottom" style="border-top: 1px solid black; border-bottom: 1px solid black;" rowspan="1" colspan="1"><p><b>BANK FOR LATER MEASUREMENT</b></p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Medical history</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Diagnoses, laboratory test results, medications, operations, symptoms, physical findings; application of natural language processing</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Electronic medical records</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Biochemical measures</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Markers of inflammation, levels of cell-free DNA, microbiome profile</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Serum, plasma, urine, stool</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Genetic&#47;molecular tests</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Whole genome sequencing, DNA methylation</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Whole blood or tissue specimens</p></td>
+</tr>
+<tr>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Imaging</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>Body composition, bone structure, artificial intelligence analyses to predict disease or outcomes</p></td>
+<td align="left" valign="top" style="border-bottom: 1px solid black;" rowspan="1" colspan="1"><p>X-rays, computerized tomography, and other methods</p></td>
+</tr>
+</table></td></tr></table></div>
+<div class="P">One advantage of such storage is the opportunity to reduce the cost of the study by making measurements only on individuals who turn out during follow-up to have an outcome of interest and a sample of others, such as by doing a <span class="emph_B">nested case-control study</span> (<span class="LK">Chapter 9</span>). Archiving biologic specimens and images also has the advantage that scientific advances after the study has begun may lead to new ideas and measurement techniques that can then be employed, funded by new grants. Specimens should be collected carefully, frozen quickly, and archived in a way&#8212;at very low temperatures (&#8722;70 &#176;C or even &#8722;190 &#176;C) that preserves them for future assays. This approach allows for the application of increasingly sophisticated types of measurements, such as proteomics or expression of genes in individual cells. Investigators should consider archiving several types of specimens such as plasma, urine, white blood cells, or stool samples for quantifying species of bacteria, to anticipate development of a wide array of future assays. It is also important to obtain informed consent from participants that covers a wide scope of future potential uses of the specimens.</div>
+</div>
+<div class="TLV1 TLV1-noHD " id="B02272760.0-105" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[8]">
+<div class="SIDEBAR KEY">
+<div class="TLV1" id="B02272760.0-106" id_xpath="/CHAPTER[1]/TBD[1]/TLV1[8]/SIDEBAR[1]/TLV1[1]">
+<div class="HD">&#9642; SUMMARY</div>
+<ul class="LS listtype_B">
+<li class="LM"><div class="P">1. Variables are either <span class="emph_B">numerical</span> or <span class="emph_B">categorical</span>. Numerical variables are <span class="emph_B">continuous</span> (quantified on an infinite scale) or <span class="emph_B">discrete</span> (quantified on a finite scale such as integers); categorical variables are <span class="emph_B">nominal</span> (unordered) or <span class="emph_B">ordinal</span> (ordered). Those that have only two categories are termed <span class="emph_B">dichotomous</span>.</div></li>
+<li class="LM"><div class="P">2. Variables that contain more information provide greater power and&#47;or allow smaller sample sizes, according to the following hierarchy: <span class="emph_B">continuous variables &#62; discrete numerical variables &#62; ordinal variables &#62; nominal</span> and <span class="emph_B">dichotomous variables</span>.</div></li>
+<li class="LM"><div class="P">3. The <span class="emph_B">precision</span> of a measurement (ie, the reproducibility of replicate measures) is another major determinant of power and sample size. Precision is reduced by <span class="emph_B">random error</span> (chance) from three sources of variability: the observer, the participant, and the instrument.</div></li>
+<li class="LM"><div class="P">4. Strategies for <span class="emph_B">increasing precision</span> that should be part of every study are to <span class="emph_B">define</span> and <span class="emph_B">standardize methods</span> in an <span class="emph_B">operations manual</span> and to train and certify observers. Other strategies that are often useful are <span class="emph_B">refining</span> and <span class="emph_B">automating</span> the instruments and <span class="emph_B">repetition</span>&#8212;using the mean of repeated measurements.</div></li>
+<li class="LM"><div class="P">5. The accuracy of a measurement is the degree to which it approximates a gold standard. Accuracy is reduced both by <span class="emph_B">imprecision</span> (random error) and <span class="emph_B">bias</span> (systematic error) from the same three sources: the observer, participant, and instrument.</div></li>
+<a name="PG49"> </a><div class="pagenum"><div>P.49</div></div><br clear="all"/>
+<li class="LM"><div class="P">6. The strategies for minimizing bias include all those listed for precision (except repetition). In addition, bias can be reduced by making <span class="emph_B">unobtrusive measures</span> and by <span class="emph_B">calibrating instruments</span>. In comparisons between groups, blinding reduces differential bias.</div></li>
+<li class="LM"><div class="P">7. <span class="emph_B">Validity</span> is the degree to which a measurement represents the phenomena it is intended to measure. It can sometimes be assessed by comparison to a <span class="emph_B">gold standard</span>. For abstract and subjective variables where there is no gold standard, it is assessed by <span class="emph_B">content validity, face validity, construct validity, predictive validity,</span> and <span class="emph_B">criterion-related validity</span>.</div></li>
+<li class="LM"><div class="P">8. Individual measurements should be <span class="emph_B">sensitive, specific, appropriate,</span> and <span class="emph_B">objective</span>, and they should produce a <span class="emph_B">range of values</span>. In the aggregate, they should be broad but parsimonious, serving the research question at moderate cost in time and money and not placing undue burden on participants.</div></li>
+<li class="LM"><div class="P">9. Investigators should consider <span class="emph_B">storing biologic samples, images,</span> and <span class="emph_B">other materials</span> for later measurements that can take advantage of new technologies as they are developed and the efficiency of nested case-control designs.</div></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="ED">
+<div class="EDS" LG="ENGLISH" id="B02272760.0-107" id_xpath="/CHAPTER[1]/ED[1]/EDS[1]">
+<div class="FNT" id="N1-4" id_xpath="/CHAPTER[1]/ED[1]/EDS[1]/FNT[1]"><div class="P"><sup>1</sup>When there are two measurements of a continuous variable per participant, it may be tempting to express their agreement using a correlation coefficient. However, because the correlation coefficient is extremely sensitive to outliers, a better approach is a &#8220;Bland-Altman&#8221; plot (<span class="LK">4</span>), in which the difference between the two measurements is plotted as a function of their mean. If the absolute value of the difference between the measurements tends to increase linearly with the mean, the coefficient of variation is a better way to summarize variability than the within-participant standard deviation.</div></div>
+<div class="FNT" id="N2-4" id_xpath="/CHAPTER[1]/ED[1]/EDS[1]/FNT[2]"><div class="P"><sup>2</sup>We&#8217;ll define sensitivity and specificity more formally as characteristics of diagnostic tests in <span class="LK">Chapter 13</span>. Here, they have the same general meaning: sensitivity relates to how good the measurement is at finding what you want to find, whereas specificity is about how good it is at avoiding finding what you don&#39;t want to find.</div></div>
+</div>
+<div class="EDS" LG="ENGLISH" id="B02272760.0-108" id_xpath="/CHAPTER[1]/ED[1]/EDS[2]">
+<div class="HD">References</div>
+<div class="RF" id="R1-4" id_xpath="/CHAPTER[1]/ED[1]/EDS[2]/RF[1]">1. <span class="JRF"><span class="DRF">Kassem Z, Burmeister C, Johnson DA, et al. Reliability of birth weight recall by parent or guardian respondents in a study of healthy adolescents. <span class="emph_I">BMC Res Notes</span>. 2018;11:878.</span></span></div>
+<div class="RF" id="R2-4" id_xpath="/CHAPTER[1]/ED[1]/EDS[2]/RF[2]">2. <span class="JRF"><span class="DRF">Jiang M, Zou Y, Xin Q, et al. Dose-response relationship between body mass index and risks of all-cause mortality and disability among the elderly: a systematic review and meta-analysis. <span class="emph_I">Clin Nutr</span>. 2019;38(4):1511-1523.</span></span></div>
+<div class="RF" id="R3-4" id_xpath="/CHAPTER[1]/ED[1]/EDS[2]/RF[3]">3. <span class="URF">Ware JE, Gandek B Jr. Overview of the SF-36 health survey and the international quality of life assessment project. <span class="emph_I">J Clin Epidemiol.</span> 1998;51:903-912. A description of the SF-36 is available at https:&#47;&#47;www.rand.org&#47;health-care&#47;surveys_tools&#47;mos&#47;36-item-short-form.html</span></div>
+<div class="RF" id="R4-4" id_xpath="/CHAPTER[1]/ED[1]/EDS[2]/RF[4]">4. <span class="JRF"><span class="DRF">Bland JM, Altman DG. Measurement error and correlation coefficients. <span class="emph_I">BMJ</span>. 1996;313:41-42; also, Measurement error proportional to the mean. <span class="emph_I">BMJ</span>. 1996;313:106.</span></span></div>
+<div class="RF" id="R5-4" id_xpath="/CHAPTER[1]/ED[1]/EDS[2]/RF[5]">5. <span class="URF">Newman TB, Kohn M. <span class="emph_I">Evidence-Based Diagnosis: An Introduction to Clinical Epidemiology</span>. 2nd ed. Cambridge University Press; 2020: Chapter 5, 110-143.</span></div>
+<div class="RF" id="R6-4" id_xpath="/CHAPTER[1]/ED[1]/EDS[2]/RF[6]">6. <span class="JRF"><span class="DRF">Cohen J. A coefficient of agreement for nominal scales. <span class="emph_I">Educ Psychol Meas.</span> 1960;20:37-46.</span></span></div>
+<div class="RF" id="R7-4" id_xpath="/CHAPTER[1]/ED[1]/EDS[2]/RF[7]">7. <span class="JRF"><span class="DRF">Kuzniewicz MW, Greene DN, Walsh EM, McCulloch CE, Newman TB. Association between laboratory calibration of a serum bilirubin assay, neonatal bilirubin levels, and phototherapy use. <span class="emph_I">JAMA Pediatr</span>. 2016;170(6):557-561.</span></span></div>
+<div class="RF" id="R8-4" id_xpath="/CHAPTER[1]/ED[1]/EDS[2]/RF[8]">8. <span class="JRF"><span class="DRF">Filion K, Kukanich KS, Chapman B, et al. Observation-based evaluation of hand hygiene practices and the effects of an intervention at a public hospital cafeteria. <span class="emph_I">Am J Infect Control.</span> 2011;39:464-470.</span></span></div>
+<div class="RF" id="R9-4" id_xpath="/CHAPTER[1]/ED[1]/EDS[2]/RF[9]">9. <span class="JRF"><span class="DRF">Peralta CA, Shlipak MG, Judd S, et al. Detection of chronic kidney disease with creatinine, cystatin C, and urine albumin-to-creatinine ratio and association with progression to end-stage renal disease and mortality. <span class="emph_I">JAMA</span>. 2011;305:1545-1552.</span></span></div>
+<div class="RF" id="R10-4" id_xpath="/CHAPTER[1]/ED[1]/EDS[2]/RF[10]">10. <span class="JRF"><span class="DRF">Xue QL, Tian J, Fried LP, et al. Physical frailty assessment in older women: can simplification be achieved without loss of syndrome measurement validity? <span class="emph_I">Am J Epidemiol</span>. 2016;183(11):1037-1044.</span></span></div>
+</div>
+<a name="PG50"> </a><div class="pagenum"><div>P.50</div></div><br clear="all"/>
+<div class="EDS" LG="ENGLISH" id="B02272760.0-109" id_xpath="/CHAPTER[1]/ED[1]/EDS[3]">
+<div class="AP" id="H1-Appendix_4A" id_xpath="/CHAPTER[1]/ED[1]/EDS[3]/AP[1]" REPLACE="NO">
+<div class="APSO">
+<div class="THD">
+<div class="HNUM">Appendix 4A</div>
+<div class="HD">Operational Definition of a Measurement of Grip Strength</div>
+</div>
+<div class="BY">
+<div class="PN"></div>
+</div>
+</div>
+<div class="TLV1 TLV1-noHD " id="B02272760.0-110" id_xpath="/CHAPTER[1]/ED[1]/EDS[3]/AP[1]/TLV1[1]">
+<div class="P">The <span class="emph_B">operations manual</span> describes the method for conducting and recording the results of all the measurements made in the study. This example describes the use of a dynamometer to measure grip strength. To standardize instructions from examiner to examiner and from participant to participant, the protocol includes a script of instructions to be read to the participant verbatim.</div>
+</div>
+<div class="TLV1" id="B02272760.0-111" id_xpath="/CHAPTER[1]/ED[1]/EDS[3]/AP[1]/TLV1[2]">
+<div class="HD">&#9642; PROTOCOL FOR MEASURING GRIP STRENGTH WITH THE DYNAMOMETER</div>
+<div class="P">Grip strength will be measured in both hands. The handle should be adjusted so that the participant holds the dynamometer comfortably. Place the dynamometer in the right hand with the dial facing the palm. The participant&#8217;s arm should be flexed 90&#176; at the elbow with the forearm parallel to the floor.</div>
+<ul class="LS listtype_N">
+<li class="LM"><div class="P">Demonstrate the test to the participant. While demonstrating, use the following description: &#8220;This device measures your arm and upper body strength. We will measure your grip strength in both arms. I will demonstrate how it is done. Bend your elbow at a 90&#176; angle, with your forearm parallel to the floor. Don&#8217;t let your arm touch the side of your body. Lower the device and squeeze as hard as you can while I count to three. Once your arm is fully extended, you can loosen your grip.&#8221;</div></li>
+<li class="LM"><div class="P">Allow one practice trial for each arm, starting with the right if she is right-handed. On the second trial, record the kilograms of force from the dial to the nearest 0.5 kg.</div></li>
+<li class="LM"><div class="P">Reset the dial. Repeat the procedure for the other arm.</div></li>
+</ul>
+<div class="P">The arm should not contact the body. The gripping action should be a slow, sustained squeeze rather than an explosive jerk.</div>
+</div>
+</div>
+</div>
+<a name="PG51"> </a><div class="pagenum"><div>P.51</div></div><br clear="all"/>
+<div class="EDS" LG="ENGLISH" id="B02272760.0-112" id_xpath="/CHAPTER[1]/ED[1]/EDS[4]">
+<div class="AP" id="H1-Appendix_4B" id_xpath="/CHAPTER[1]/ED[1]/EDS[4]/AP[1]" REPLACE="NO">
+<div class="APSO">
+<div class="THD">
+<div class="HNUM">Appendix 4B</div>
+<div class="HD">Exercises for <span class="LK">Chapter 4</span>. Planning the Measurements: Precision, Accuracy, and Validity</div>
+</div>
+<div class="BY">
+<div class="PN"></div>
+</div>
+</div>
+<div class="TLV1 TLV1-noHD " id="B02272760.0-113" id_xpath="/CHAPTER[1]/ED[1]/EDS[4]/AP[1]/TLV1[1]">
+<ul class="LS listtype_N">
+<li class="LM"><div class="P">Classify the following variables as dichotomous, nominal, ordinal, continuous, or discrete numerical. Could any of them be modified to increase power, and, if so, how?</div>
+<ul class="LS listtype_L">
+<li class="LM"><div class="P">History of heart attack (present&#47;absent)</div></li>
+<li class="LM"><div class="P">Age</div></li>
+<li class="LM"><div class="P">Education (college degree or more&#47;less than college degree)</div></li>
+<li class="LM"><div class="P">Race</div></li>
+<li class="LM"><div class="P">Number of alcohol drinks per day</div></li>
+<li class="LM"><div class="P">Depression (none, mild, moderate, severe)</div></li>
+<li class="LM"><div class="P">Percent occlusion of coronary arteries</div></li>
+<li class="LM"><div class="P">Hair color</div></li>
+<li class="LM"><div class="P">Obese (body mass index &#8805; 30 kg&#47;m<sup>2</sup>)&#47;nonobese (body mass index &#60; 30 kg&#47;m<sup>2</sup>)</div></li>
+</ul></li>
+<li class="LM"><div class="P">2. An investigator is interested in the research question: &#8220;Does intake of fruit juice at age 6 months predict body weight at age 1 year?&#8221; She plans a prospective cohort study, measuring body weight using an infant scale. Several problems (listed further on) are noted during pretesting. Are these problems due to imprecision (random error), bias (systematic error), or both? Is the problem mainly due to observer, participant, or instrument variability, and what can be done about it?</div>
+<ul class="LS listtype_L">
+<li class="LM"><div class="P">The 10-kg reference weight used to calibrate the scale has a true weight of 10.2 kg.</div></li>
+<li class="LM"><div class="P">Weighing the 10-kg reference on the scale repeatedly gives a mean &#177; standard deviation of 10.01 &#177; 0.2 kg.</div></li>
+<li class="LM"><div class="P">Some babies are frightened, and when they try to squirm off the scale, the observer must hold them on to complete the measurement.</div></li>
+<li class="LM"><div class="P">The pointer on the scale swings up and down wildly for babies who don&#8217;t lie still.</div></li>
+<li class="LM"><div class="P">Some of the babies arrive for the examination immediately after being fed, whereas others are hungry; some of the babies are weighed with wet diapers.</div></li>
+</ul></li>
+<li class="LM"><div class="P">3. The investigator is interested in studying the effect of resident work-hour limitations on surgical residents. One area she wishes to address is burnout, and she plans to assess it with two questions (answered on a 7-point scale) from a more extensive questionnaire: (a) &#8220;How often do you feel burned out from your work?&#8221; and (b) &#8220;How often do you feel you&#8217;ve become more callous toward people since you started your residency?&#8221;</div>
+<div class="P">The investigator sets out to assess the validity of these questions for measuring burnout. For each of the following descriptions, name the type of validity being assessed:</div>
+<ul class="LS listtype_L">
+<li class="LM"><div class="P">Residents with higher burnout scores were more likely to drop out of the program in the following year.</div></li>
+<li class="LM"><div class="P">A small group of residents are asked to review the items and report that these seem like reasonable questions to ask to address burnout.</div></li>
+<li class="LM"><div class="P">Burnout scores increase during the most arduous rotations and decrease during vacations.</div></li>
+<li class="LM"><div class="P">A previous study of more than 10,000 medical students, residents, and practicing physicians showed that these two items almost completely captured the emotional exhaustion and depersonalization domains of burnout as measured by the widely accepted (but much longer) Maslach Burnout Inventory (<span class="LK">1</span>).</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="EDS" LG="ENGLISH" id="B02272760.0-114" id_xpath="/CHAPTER[1]/ED[1]/EDS[5]">
+<div class="HD">Reference</div>
+<div class="RF" id="RA1-4" id_xpath="/CHAPTER[1]/ED[1]/EDS[5]/RF[1]">1. <span class="JRF"><span class="DRF">West CP, Dyrbye LN, Sloan JA, Shanafelt TD. Single item measures of emotional exhaustion and depersonalization are useful for assessing burnout in medical professionals. <span class="emph_I">J Gen Intern Med.</span> 2009;24(12):1318-1321.</span></span></div>
+</div>
+</div>
+</div>
+</div> <!-- main-content -->
+
+<div id="ovid-footer" role="contentinfo"><div id="footer-buttons-lower"><ul class="header-list"><li class="header-lists"><a class="tlink" href="//www.ovid.com/site/about/index.jsp?top=42" target="_blank">About Us<span class="hidden-message">Opens in new window</span></a></li><li class="header-lists"><a class="tlink" href="//www.ovid.com/site/support/techSupportForm.jsp?top=34&mid=35" target="_blank">Contact Us<span class="hidden-message">Opens in new window</span></a></li><li class="header-lists"><a class="tlink" href="//ovid.com/site/privacy.jsp" target="_blank">Privacy Policy<span class="hidden-message">Opens in new window</span></a></li><li class="header-lists"><a class="tlink" href="//www.ovid.com/site/about/terms.jsp" target="_blank">Terms of Use<span class="hidden-message">Opens in new window</span></a></li><li class="header-lists"><button id="ot-sdk-btn" class="ot-sdk-show-settings">Manage Cookie Preferences</button></li></ul></div><div id="footer-copyright-build"><div id="footer-copyright">&copy; 2026 <a class="copyright-link" href="//www.ovid.com" target="_blank">Ovid Technologies, Inc.<span class="hidden-message">Opens in a new window</span></a> All rights reserved.</div></div></div></div> <!-- below-banner -->
+<script>
+    var persistentData = {"dump":"","resource":["books"],"strategy":[],"enabled":1,"key":"jUm+AwAEe1kYeJ3UpqywjQ","to_remove":""};
+
+    if( persistentData.enabled ){
+        if(persistentData.to_remove != ''){
+            localStorage.removeItem('user-search-basic-'+persistentData.to_remove);
+            localStorage.removeItem('user-search-advanced-'+persistentData.to_remove);
+            localStorage.removeItem('user-'+persistentData.to_remove, '');
+        }
+        if( persistentData.strategy.length>0 ){
+            localStorage.setItem('user-'+persistentData.key, JSON.stringify(persistentData));
+        }
+    }
+
+    $(function() {
+        $('.logofflast').click(function(){
+            localStorage.removeItem('user-'+persistentData.key);
+            localStorage.removeItem('user-search-basic-'+persistentData.key);
+            localStorage.removeItem('user-search-advanced-'+persistentData.key);
+        });
+    });
+    function pdStoreInput(t,e){
+        if( persistentData.enabled && persistentData.strategy.length>0 ){
+            localStorage.setItem( 'user-search-'+t+'-'+persistentData.key, e.value);
+        }
+    }
+</script>
+</body>
+</html>
+
